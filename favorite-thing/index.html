@@ -37,6 +37,25 @@
         a:hover {
             color: violet;
         }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: spinplusrgb;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            margin: auto;
+        }
+
+        @keyframes spinplusrgb {
+            0%   {background-color: red;}
+            50%  {background-color: blue;}
+            100% {background-color: green;
+                -webkit-transform: rotate(360deg); 
+                transform:rotate(360deg); }
+                 }
     </style>
 </head>
 
@@ -44,6 +63,8 @@
     
     <h1 class="centered"> My Favorite Thing About School </h1>
     <h2 class="centered"> The Makerspace </h2>
+
+    <div></div>
 
     <p id="paragraph">
         I like the makerspace because it has a variety of machines and materials <br>
