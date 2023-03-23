@@ -5721,7 +5721,7 @@ var app = (function () {
         u,
         c,
         () => {
-          let e = artist + " Heardle #" + (s.id + 1),
+          let e = artist + " Heardle #" + (s.id + 1) + "\n" + songList[s.id]["answer"],
             t = "";
           a
             ? r.length < i.maxAttempts / 3
