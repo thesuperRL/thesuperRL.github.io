@@ -5,8 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #blue-text{
+            color:blue;
+        }
+        #red-text{
+            color:red;
+        }
+        #multi-text{
+            color:green;
+            font-size: 24px;
+            text-align: right;
+        }
+
+        .span1{
+            color:red;
+            background-color: white;
+            font-size: 80px;
+        }
+
+        .centered-img{
+            display: block;
+            margin: 10px auto;
+            width: 50%;
+        }
+    </style>
 </head>
 <body>
     <h1> today we css lmao </h1>
+    <h2> style w inline </h2>
+    <p>
+        no style
+    </p>
+    <p style = "color: seagreen">
+        seagreen
+    </p>
+    <p style="color:rgb(126, 22, 210); font-size: 50px;">
+        rgb, font 50px
+    </p>
+    <p style="text-align: center; font-size: 24px; color: coral;">
+        centered, red, font 24px, coral background
+    </p>
+    <h2> this is use internal css </h2>
+
+    <p id="blue-text">
+        blue
+    </p>
+    <p id="red-text">
+        this one red
+    </p>
+    <p id="multi-text">
+        green, 24px, right aligned
+    </p>
+
+    <h2> divs and spans</h2>
+    <div class="special">
+        <h3> this is div</h3>
+        <p>part of div and <span class = "span1">
+            this is span
+        </span></p>
+        <p>still part of div</p>
+    </div>
+
+    <img src="haven.jpg" class="centered-img">
 </body>
 </html>
