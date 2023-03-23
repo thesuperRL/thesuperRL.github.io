@@ -5126,6 +5126,7 @@ var app = (function () {
         { guessRef: l } = t,
         { isPrime: u } = t,
         c = !1;
+      let today = new Date().toLocaleDateString('en-us', {year:"numeric", month:"short", day:"numeric"}) ;
       return (
         A(),
         (e.$$set = (e) => {
@@ -5146,7 +5147,7 @@ var app = (function () {
           c,
           () => {
             // console.log('answer', r.length)
-            let e = "Project Sekai Heardle #" + (s.id + 1),
+            let e = "Project Sekai Heardle #" + (s.id + 1) + ", " + today,
               t = "";
             a
               ? r.length < i.maxAttempts / 3
