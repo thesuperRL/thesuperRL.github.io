@@ -1,0 +1,106 @@
+
+body{
+    background-color:darkseagreen;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#paragraph{
+    font-size: 20px;
+}
+
+.centered{
+    text-align: center;
+}
+
+a{
+    color:lightskyblue; 
+    text-decoration:none;
+}
+
+a:link {
+    color:skyblue;
+}
+
+a:visited {
+    color:lightblue;
+}
+
+a:hover {
+    color: violet;
+}
+
+.spin {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: spinplusrgb;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin: auto;
+}
+
+@keyframes spinplusrgb {
+    0%   {background-color: red;}
+    50%  {background-color: blue;}
+    100% {background-color: green;
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); }
+}
+
+.alternate {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    position: relative;
+    left: 1000px;
+    
+    rotate: -45deg;
+    animation: fourtyfive 4s infinite alternate ease-in-out,
+                slide 1s forwards ease-in-out;
+    margin: auto;
+}
+
+@keyframes fourtyfive {
+    to{
+        rotate: 45deg;
+    }
+}
+
+@keyframes slide{
+    to{
+        left: 0;
+    }
+}
+
+.nav{
+    list-style-type: none;
+    background-color: seagreen;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+ul.nav li {
+  float: left;
+}
+
+ul.nav li a {
+  display: block;
+  color: aqua;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+
+ul.nav a:hover{
+    background-color: lightseagreen;
+    color: rebeccapurple;
+}
+
+.active{
+    background-color: cadetblue;
+}

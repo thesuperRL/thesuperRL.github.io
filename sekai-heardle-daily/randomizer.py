@@ -1,7 +1,7 @@
 import random
 arr = []
 
-for i in range(0, 137):
+for i in range(0, 156):
     arr.append(i)
 
 
