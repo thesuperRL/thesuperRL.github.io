@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function(){
+            const track = document.getElementById("image-track");
+
+            window.onmousedown = e => {
+                track.dataset.mouseDownAt = e.clientX;
+            }
+
+            window.onmouseup = e => {
+                track.dataset.mouseDownAt = "0";
+                track.dataset.prevPercentage = track.dataset.percentage;
+            }
+
+            window.onmousemove = e => {
+                if (track.dataset.mouseDownAt === "0"){
+                    return;
+                }
+
+                const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+                      maxDelta = window.innerWidth/2;
+
+
+                const percentage = (mouseDelta / maxDelta) * -100;
+                      nextPercentage = parseFloat(track.dataset.prevPercentage) + percentage;
+
+                nextPercentage = Math.min(0, nextPercentage);
+                nextPercentage = Math.max(-100, nextPercentage);
+
+                track.dataset.percentage = nextPercentage;
+
+                track.style.transform = `translate(${nextPercentage}%, -50%)`;
+
+                // update images
+                for (const image of track.getElementsByClassName("image")){
+                    image.style.objectPosition = `${nextPercentage + 100}% 50%`;
+                }
+                
+                track.dataset.percentage = nextPercentage;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="active">
+            <a href = "index.html"> Home </a>
+        </li>
+        <li class="active">
+            <a href = "resource.html"> Resources </a>
+        </li>
+        <li class="active">
+            <a href = "gallery.html"> Gallery </a>
+        </li>
+        <li class="active">
+            <a href = "contact.html"> Contact </a>
+        </li>
+    </ul>
+
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="image" src="images\VS.png" draggable="false">
+        <img class="image" src="images\LN.png" draggable="false">
+        <img class="image" src="images\MMJ.png" draggable="false">
+        <img class="image" src="images\VBS.png" draggable="false">
+        <img class="image" src="images\WXS.png" draggable="false">
+        <img class="image" src="images\25Ji.png" draggable="false">
+    </div>
+
+</body>
