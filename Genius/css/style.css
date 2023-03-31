@@ -7,7 +7,6 @@ body{
     height: 100vh;
     width: 100vw;
     margin: 0rem;
-    overflow: hidden;
     
     /* make it unselectable, because it screws up the scroll bar */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -58,8 +57,8 @@ ul.nav a:hover{
 }
 
 #image-track > .image{
-    width: 300px;
-    height: 450px;
+    width: 180px;
+    height: 270px;
     object-fit: cover;
     object-position: 100% 50%;
 }
@@ -71,4 +70,8 @@ ul.nav a:hover{
     left: 50%;
     top: 50%;
     transform: translate(0%, -50%);
+}
+
+h1, h2, h3{
+    text-align: center;
 }
