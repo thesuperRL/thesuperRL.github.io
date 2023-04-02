@@ -17,6 +17,50 @@
             width: 720px;
             margin:0 auto;
         }
+
+        /* image hover tutorial from https://www.w3schools.com/howto/howto_css_image_overlay.asp */
+
+        .container {
+            position: relative;
+            width: 50%;
+        }
+
+        .image {
+            display: block;
+            width: 220px;
+            height: 270px;
+            object-fit: cover;
+            object-position: 100% 50%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: dimgray;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
     </style>
     <script>
         // from https://www.youtube.com/watch?v=PkADl0HubMY
@@ -53,8 +97,10 @@
                 track.style.transform = `translate(${nextPercentage}%, -50%)`;
 
                 // update images
-                for (const image of track.getElementsByClassName("image")){
-                    image.style.objectPosition = `${nextPercentage + 100}% 50%`;
+                for (const image of track.getElementsByClassName("container")){
+                    for (const image of track.getElementsByClassName("image")){
+                        image.style.objectPosition = `${nextPercentage + 100}% 50%`;
+                    }
                 }
                 
                 track.dataset.percentage = nextPercentage;
@@ -87,19 +133,95 @@
         All of the programs (except Autodesk ones) are permanently free, 
         and being a student allows you to get the Autodesk ones for free.
     </p>
+    
+    <p style="text-align: center;">
+        Hover on the images to see their descriptions. 
+        Drag left and right to scroll along.
+    </p>
 
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-        <img class="image" src="images\Illustrator.png" draggable="false">
-        <img class="image" src="images\Tinker.png" draggable="false">
-        <img class="image" src="images\Inventor.png" draggable="false">
-        <img class="image" src="images\Fusion.png" draggable="false">
-        <img class="image" src="images\Blender.png" draggable="false">
-        <img class="image" src="images\Dodoco.png" draggable="false">
-        <img class="image" src="images\Tao.png" draggable="false">
-        <img class="image" src="images\Printing.png" draggable="false">
-        <img class="image" src="images\Vision.png" draggable="false">
-        <img class="image" src="images\Tales.png" draggable="false">
-        <img class="image" src="images\Fan.png" draggable="false">
-        <img class="image" src="images\Resin.png" draggable="false">
+        <div class="container">
+            <img class="image" src="images\Illustrator.png" draggable="false" alt="Adobe Illustrator Logo">
+            <div class="overlay">
+              <div class="text"> Logo of aforementioned Adobe Illustrator, used in laser cutting</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Tinker.png" draggable="false" alt="Tinkercad Logo">
+            <div class="overlay">
+              <div class="text"> Logo of Autodesk Tinkercad, most beginner friendly 3D modeling application</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Inventor.png" draggable="false" alt="Inventor Logo">
+            <div class="overlay">
+              <div class="text"> Logo of Autodesk Inventor, similar to Fusion360 albeit slightly less professional and older</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Fusion.png" draggable="false" alt="Fusion Logo">
+            <div class="overlay">
+              <div class="text"> Logo of Autodesk Fusion360, similar to Inventor albeit newer and better for large multi-part projects</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Blender.png" draggable="false" alt="Blender Logo">
+            <div class="overlay">
+              <div class="text"> Logo of Blender, free 3D modeling application comparable to Fusion that makes 3D modeled art easier but part manufacturing harder</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Dodoco.png" draggable="false" alt="Genshin Dodoco in Blender">
+            <div class="overlay">
+              <div class="text"> Genshin Impact's Dodoco, made in Blender by me, Gradient is an example of node shading, an advanced visual usage of blender</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Tao.png" draggable="false">
+            <div class="overlay">
+              <div class="text"> Genshin Impact's Hu Tao, made in Blender by me, a 2 week long project and the hardest Blender project I have made</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Printing.png" draggable="false">
+            <div class="overlay">
+              <div class="text"> A Genshin Impact Vision made in TinkerCAD, in the middle of being printed by a Prusa Mini 3D printer in the EPS Makerspace</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Vision.png" draggable="false">
+            <div class="overlay">
+              <div class="text"> The aforementioned Vision, after it is fully printed with a sharpie symbol drawn on top</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Tales.png" draggable="false">
+            <div class="overlay">
+              <div class="text"> Genshin Impact's Dodoco Tales, made in Fusion360 by me, a project where I wanted to make layered laser cuts</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Fan.png" draggable="false">
+            <div class="overlay">
+              <div class="text"> A Fan made of printed paper and laser cut wood pieces by me, one of my hardest projects that required 5 prototypes</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img class="image" src="images\Resin.png" draggable="false">
+            <div class="overlay">
+              <div class="text"> A recent resin print made by me, these are D&D figurines for the D&D Club at EPS. Made on Prusa SL 1</div>
+            </div>
+        </div>
     </div>
 </body>

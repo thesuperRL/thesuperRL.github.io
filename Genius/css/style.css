@@ -56,13 +56,6 @@ ul.nav a:hover{
     background-color: gray;
 }
 
-#image-track > .image{
-    width: 180px;
-    height: 270px;
-    object-fit: cover;
-    object-position: 100% 50%;
-}
-
 #image-track{
     display: flex;
     gap: 4vmin;
