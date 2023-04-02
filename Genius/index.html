@@ -18,9 +18,9 @@
             margin: 10px 70px; 
             width:520px;
         }
-        #goalslist {
+        #stepsList {
             float:right;
-            margin: 10px auto; 
+            margin: 10px 50px; 
             width:520px;
         }
     </style>
@@ -52,58 +52,90 @@
     <image src = "images\LaserCutCoasters.png" alt="Fade Coasters I made with Laser Cutting"></image>
 
     <p>
-        One of my favorite things to do is to make things in the EPS makerspace.
-        I began in 9th grade working on small projects with 3D printing, and started by learning the two types of 3D printers here.
-        Later, I transitioned to other materials, mostly after I entered the 10th grade.
+        The EPS makerspace has many tools to create things with. 
+        There are many ways to utilize these tools: 3D printing, Laser cutting, Resin printing, and more.
+        This page seeks to teach you about the tools required for them, primarily focusing on the easiest of the three: Laser Cutting.
     </p>
 
     <details>
         <summary>
-            Now, I know how to use many of the makerspace machines. 
-            These are the machines that I often use. (Click to expand)
+            CAD programs used with the makerspace machines (Click to expand)
         </summary>
         <ul>
             <li>
-                3D Printer
+                3D Modeling
                 <ul>
-                    <li> Mini </li>
-                    <li> i3 MK3</li>
+                    <li> Blender </li>
+                    <li> TinkerCAD </li>
+                    <li> Inventor </li>
+                    <li> Fusion 360</li>
                 </ul>
             </li>
             <li>
-                Laser Cutter
+                Laser Cutting
                 <ul>
-                    <li> Universal </li>
-                    <li> Glowforge </li>
+                    <li> Illustrator </li>
+                    <li> Fusion 360 </li>
+                    <li> FreeCAD </li>
                 </ul>
             </li>
             <li>
-                Resin Printer (SL1)
-            </li>
-            <li>
-                Power Tools
+                Machine-Related Software
                 <ul>
-                    <li> Belt Sander </li>
-                    <li> Bandsaw </li>
-                    <li> Drills </li>
+                    <li> 
+                        <a style="color: white;" href="https://glowforge.com/"> 
+                            Glowforge Website
+                        </a>
+                    </li>
+                    <li> Adobe Acrobat </li>
+                    <li> Prusa Slicer </li>
                 </ul>
             </li>
         </ul>
     </details>
 
     <p>
-        Lately, I have been increasing my skills with 3D modeling in order to create more impressive projects.
-        I now mainly use Fusion 360, and I am working on modeling the organization of a car trunk for the EPS EV project.
-        With this, we can adequately plan out the locations of the future electronics.
-        I am also receiving the first requests for me to make something, starting from a "commission" of a wicket a few days ago.
-        <br> <br>
-        My goals with this skill is to create:
-        <ul id="goalslist">
-            <li> A "Layered Laser Cut" with pieces stacked on each other to create depth </li>
-            <li> A functional 3D print that involves gears to have a purpose </li>
-            <li> Proficiency with the Resin Printer </li>
-            <li> Start a shop to sell some of the products I make </li>
-        </ul>
+       Laser cutting is quite easy with the program Adobe Illustrator.
+       Using it, you can take any image and trace it with the program, creating what is called a "vectorized" image.
+       These vectors are essentially instructions that tell the machine how to move.
+       With this, Adobe Illustrator essentially creates a file that tells the laser cutter the path to trace on the wood.
+    </p>
+
+    <p>
+        The steps are easy: 
+        <ol id="stepsList">
+            <li>
+                Find an image on the internet that you want to laser cut.
+                Ideally, this image has at least one of the following characteristics:
+                <ul>
+                    <li>
+                        Has only one color and the rest is white
+                    </li>
+                    <li>
+                        Has a white/light background with the silhouette as what is cut out
+                    </li>
+                    <li>
+                        Has clear divisions between colors (no fading in/out colors)
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Paste it into Adobe Illustrator, with the size of the canvas according to the specifications of the machine
+            </li>
+            <li>
+                Go to Image Trace, then choose based on your specifications.
+                Usually choose silhouette if you want to cut out the non-white region,
+                choose black and white if you have a slight amount of edge fade, 
+                and choose N-color trace if you want to cut out along the lines of different colors.
+            </li>
+            <li>
+                Export to a PDF file, at EPS we drop it into the LasercuttingAndEtching online folder,
+                at the Make@EPS folder within the online drive sharing.
+            </li>
+            <li>
+                Find it from the laser cutter's computer, and use the machine to cut!
+            </li>
+        </ol>
     </p>
 
 </body>
