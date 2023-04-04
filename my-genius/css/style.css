@@ -2,7 +2,10 @@
 body{
     background-color:black;
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    font-family: "area-normal", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 
     height: 100vh;
     width: 100vw;
@@ -16,6 +19,20 @@ body{
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
+}
+
+h1{
+    font-family: "timberline", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 75px;
+}
+
+h2{
+    font-family: "wreath", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
 }
 
 #paragraph{
