@@ -17,15 +17,70 @@
         p, details {
             float:right;
             margin: 10px 70px; 
-            width:520px;
+            width: 520px;
+            font-family: 200 Georgia, serif;
         }
         #stepsList {
             float:right;
             margin: 10px 50px; 
             width:520px;
         }
+        #altheading {
+            font-family: Georgia, serif;
+        }
+        
+        body{
+            background-color:black;
+            color: white;
+
+            font-family: "area-normal", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+
+            height: 100vh;
+            width: 100vw;
+            margin: 0rem;
+            
+            /* make it unselectable, because it screws up the scroll bar */
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome, Edge, Opera and Firefox */
+        }
+
+        .nav{
+            list-style-type: none;
+            background-color: dimgray;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        ul.nav li {
+        display: inline-block;
+        }
+
+        ul.nav li a {
+        display: block;
+        color: aliceblue;
+        text-align: center;
+        padding: 5px 5px;
+        text-decoration: none;
+        }
+
+        ul.nav a:hover{
+            background-color: darkgray;
+            color: violet;
+        }
+
+        h1, h2, h3{
+            text-align: center;
+        }
     </style>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -47,9 +102,9 @@
         </li>
     </ul>
 
-    <h1> Working in the EPS Makerspace </h1>
+    <h1 class="altheading"> Working in the EPS Makerspace </h1>
 
-    <h2> 
+    <h2 class="altheading"> 
         Creating things in the EPS Makerspace
     </h2>
 
