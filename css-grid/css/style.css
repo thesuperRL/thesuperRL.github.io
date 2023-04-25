@@ -37,8 +37,16 @@ body{
     grid-column: 1 / 4;
 }
 
-.nav{
+.active{
+    background-color: gray;
+}
+
+.navmenu{
     grid-column: 1 / 4;
+    padding: 0px;
+}
+
+.nav{
     list-style-type: none;
     background-color: dimgray;
     margin: 0;
