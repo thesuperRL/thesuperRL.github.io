@@ -34,6 +34,9 @@
         onclick="document.getElementById('alice').style.color='red'; document.getElementById('alice').style.fontSize='50px'">Potion
         - Drink me</button>
     <!--add third button to restore Alice to default font color and size-->
+    <button
+    onclick="document.getElementById('alice').style.color='black'; document.getElementById('alice').style.fontSize='medium'">Medicine
+        - Reset</button>
     <hr>
     <h2>How do we return user input with a function</h2>
     <button onclick="askName()">What's your name?</button>
@@ -48,6 +51,35 @@
             } else {
                 nameParagraph.innerHTML = "Hello " + name + "! Nice to meet you.";
             }
+        }
+    </script>
+
+    <!-- MY CODE: -->
+    <!-- Changes Background Color -->
+    <hr>
+    <h2>Change the background to something else!</h2>
+    <button
+        onclick="randomizeC()">Random Color!</button>
+    <button
+        onclick="setImg()">Yukon EBC Image!</button>
+    <button
+        onclick="reset()">Reset</button>
+    <script>
+        // generates a random color and sets bg
+        // help from https://css-tricks.com/snippets/javascript/random-hex-color/
+        function randomizeC(){
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor="#" + randomColor;
+            document.body.style.backgroundImage = null;
+        }
+
+        function setImg(){
+            document.body.style.backgroundImage = "url('images/nathanbg.jfif')";
+        }
+
+        function reset(){
+            document.body.style.backgroundImage = null;
+            document.body.style.backgroundColor = "#FFFFFF";
         }
     </script>
 </body>
