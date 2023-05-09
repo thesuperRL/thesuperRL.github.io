@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Messaround</title>
+</head>
+<body>
+    <h1>Let's learn javascript!</h1>
+    <h2>How do we do onclick events and alerts on an anchor</h2>
+    <a href="https://eastsideprep.org" target="_blank"
+        onclick="alert('Warning! You are navigating away from my cool page!')">school website</a>
+    <hr>
+    <h2>How do we display and hide text?</h2>
+    <h2>What's my secret identity?</h2>
+    <p id="secret"></p>
+    <button
+        onclick="document.getElementById('secret').innerHTML='Nana nana nana nana, Batman!'; document.getElementById('secret').style.display='block'">Reveal!</button>
+    <button onclick="document.getElementById('secret').style.display='none'">Hide!</button>
+    <hr>
+    <h2>How do we change an image with javascript?</h2>
+    <img src="images/pic_bulboff.gif" alt="light bulb off" id="myImage">
+    <button onclick="document.getElementById('myImage').src='images/pic_bulbon.gif'">Bulb on</button>
+    <!--stuent challenge - turn off the bulb-->
+    <button>Bulb off</button>
+    <hr>
+    <h2>How do we change scc styles with a button?</h2>
+    <p id="alice">Hi. I am Alice.</p>
+    <button
+        onclick="document.getElementById('alice').style.color='blue'; document.getElementById('alice').style.fontSize='5px'">Cake
+        - Eat me</button>
+    <button
+        onclick="document.getElementById('alice').style.color='red'; document.getElementById('alice').style.fontSize='50px'">Potion
+        - Drink me</button>
+    <!--add third button to restore Alice to default font color and size-->
+    <hr>
+    <h2>How do we return user input with a function</h2>
+    <button onclick="askName()">What's your name?</button>
+    <p id="ask-name"></p>
+    <script>
+        function askName() {
+            let nameParagraph = document.getElementById("ask-name");
+            let name = prompt("What is your name?");
+            // now lets decide what to do
+            if (name === "batman") {
+                nameParagraph.innerHTML = "Welcome to the batcave, sir.";
+            } else {
+                nameParagraph.innerHTML = "Hello " + name + "! Nice to meet you.";
+            }
+        }
+    </script>
+</body>
+</html>
