@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz and Two Truths and Lie</title>
+    <script src="js/game.js"></script>
+</head>
+<body>
+    <h1>
+        Welcome to my game
+    </h1>
+    <h2>
+        Input info here
+    </h2>
+
+    <form action="" id="name-form">
+        <label for="fname"> First Name: </label>
+        <br>
+        <input type="text" name="fname" id="fname">
+        <br>
+        <label for="lname"> Last Name: </label>
+        <br>
+        <input type="text" name="lname" id="lname">
+        <br>
+        <label for="age"> Age: </label>
+        <br>
+        <input type="text" name="age" id="age">
+    </form>
+    <br>
+    <input type="button" value="Submit" onclick="welcome()">
+    
+    <p id="mod"> Please input your name </p>
+
+    <hr>
+    <form>
+        <label> First Question: Two truths and a Lie. Select the lie:</label>
+        <br>
+        <input type="radio" name="q1" id="sel1">
+        <label for="sel1"> I got into AIME twice </label>
+        <br>
+        <input type="radio" name="q1" id="sel2">
+        <label for="sel2"> I was born in Canada </label>
+        <br>
+        <input type="radio" name="q1" id="sel3">
+        <label for="sel3"> I used to play flute, but not anymore </label>
+    </form>
+    <br>
+    <input type="button" value="Submit" onclick="submit1()">
+    <p id="msg"></p>
+
+    <hr>
+    <form>
+        <label> Second Question: Two truths and a Lie. Select the truths:</label>
+        <br>
+        <input type="checkbox" name="clam" id="sel12">
+        <label for="sel1"> I like eating clams </label>
+        <br>
+        <input type="checkbox" name="potato" id="sel22">
+        <label for="sel2"> I like eating potatoes </label>
+        <br>
+        <input type="checkbox" name="pduck" id="sel32">
+        <label for="sel3"> I like eating Peking Duck </label>
+    </form>
+    <br>
+    <input type="button" value="Submit" onclick="submit2()">
+    <p id="msg2"></p>
+
+</body>
+</html>
