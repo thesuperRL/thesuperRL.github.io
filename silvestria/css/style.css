@@ -1,0 +1,85 @@
+body {
+    /* BACKGROUND */
+    background: url(/silvestria/images/wood-pattern.png), #FFC18C;
+
+    /* FONT AND COLOR */
+    font-family: "blanket", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #66493A;
+}
+
+h1, h2, h3 {
+    /* FONT AND COLOR */
+    font-family: "timberline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    text-align: center;
+}
+
+footer {
+    background-color: #D73502;
+}
+
+.title {
+    animation: fadeIn 2s; 
+}
+
+@keyframes fadeIn {
+    /* help https://blog.hubspot.com/website/css-fade-in */
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.everything-else {
+    animation-name: slideUp;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    display: block;
+}
+
+.home-footer {
+    animation-name: slideUp;
+    animation-duration: 2.75s;
+    animation-timing-function: ease-in;
+    display: block;
+}
+
+@keyframes slideUp {
+    /* help https://stackoverflow.com/questions/72469234/slide-up-animation-for-text-using-css-only */
+    0%,
+    50% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+     
+    60%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    
+    }
+}
+
+.navbar-animator {
+    animation-name: slideDown;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    display: block;
+}
+
+@keyframes slideDown {
+    0%,
+    50% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+     
+    60%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    
+    }
+}
