@@ -41,9 +41,32 @@ footer {
 
 .home-footer {
     animation-name: slideUp;
-    animation-duration: 2.75s;
+    animation-duration: 2s;
     animation-timing-function: ease-in;
     display: block;
+}  
+
+.navbar-nav > li{
+    text-align: center;
+    padding-left:75;
+    padding-right:75px;
+}
+
+.orderbutton {
+    width: 500px;
+    font-size: 50px;
+    background-color: #DA6D42;
+
+    font-family: "timberline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    text-align: center;
+}
+
+.orderbutton:hover {
+    background-color: #66493A;
+    color: #FFC18C;
 }
 
 @keyframes slideUp {
@@ -82,4 +105,16 @@ footer {
       opacity: 1;
     
     }
+}
+
+.displaycarousel{
+    width: 1206px;
+    height: auto;
+
+    /* center */
+    margin: auto;
+
+    /* round edges */
+    border-radius: 10px;
+    overflow: hidden;
 }
