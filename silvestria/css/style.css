@@ -24,6 +24,7 @@ footer {
 
 .title {
     animation: fadeIn 2s; 
+    padding: 15px;
 }
 
 @keyframes fadeIn {
@@ -83,8 +84,9 @@ footer {
 
 .carousel-item > img{
     /* help from https://www.gavsblog.com/blog/change-the-aspect-ratio-of-an-image-using-css */
-    aspect-ratio: 5/3;
+    aspect-ratio: 16/9;
     filter: brightness(50%);
+    object-fit: cover;
 }
 
 .col-md > p{
