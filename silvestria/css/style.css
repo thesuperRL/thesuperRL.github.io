@@ -32,20 +32,6 @@ footer {
     100% { opacity: 1; }
 }
 
-.everything-else {
-    animation-name: slideUp;
-    animation-duration: 2s;
-    animation-timing-function: ease-in;
-    display: block;
-}
-
-.home-footer {
-    animation-name: slideUp;
-    animation-duration: 2s;
-    animation-timing-function: ease-in;
-    display: block;
-}  
-
 .navbar-nav > li{
     text-align: center;
     padding-left:75;
@@ -69,52 +55,26 @@ footer {
     color: #FFC18C;
 }
 
-@keyframes slideUp {
-    /* help https://stackoverflow.com/questions/72469234/slide-up-animation-for-text-using-css-only */
-    0%,
-    50% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-     
-    60%,
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    
-    }
-}
-
-.navbar-animator {
-    animation-name: slideDown;
-    animation-duration: 2s;
-    animation-timing-function: ease-in;
-    display: block;
-}
-
-@keyframes slideDown {
-    0%,
-    50% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-     
-    60%,
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    
-    }
-}
-
 .displaycarousel{
-    width: 1206px;
+    width: 90%;
     height: auto;
-
-    /* center */
-    margin: auto;
 
     /* round edges */
     border-radius: 10px;
     overflow: hidden;
+}
+
+.carousel-caption > h3{
+    font-size: 70px;
+}
+
+.carousel-caption > p{
+    font-size: 40px;
+}
+
+.carousel-caption > a{
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px;
+    color: #D73502;
 }

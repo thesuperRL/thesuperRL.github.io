@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/phg7nca.css">
 </head>
 <body>
-    <div class="container-fluid text-white p-3 navbar-animator">
-        <nav class="navbar navbar-expand-sm navbar-light justify-content-center rounded p-0" style="background-color: #DA6D42;">
+    <div class="container-fluid text-white p-3">
+        <nav class="navbar navbar-expand-sm navbar-light rounded p-0 w-75 m-auto" style="background-color: #DA6D42;">
             <div class="container-fluid justify-content-center">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -21,7 +21,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand" href="#">
-                            <img src="images/silvestria-logo.png" width="70" height="70" class="d-inline-block align-top" alt="Silvestria Logo">
+                            <img src="images/silvestria-logo.png" width="50" height="50" class="d-inline-block align-top" alt="Silvestria Logo">
                         </a>
                     </li>
                     <li class="nav-item">
@@ -40,91 +40,88 @@
         </h1>
     </div>
 
-    <div class="everything-else">
-        <!-- Bootstrap Carousel -->
-        <div id="demo" class="carousel slide displaycarousel" data-bs-ride="carousel">
+    <!-- Bootstrap Carousel -->
+    <div id="demo" class="carousel slide displaycarousel m-auto" data-bs-ride="carousel">
 
-            <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-            </div>
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/nathanbg.jfif" alt="PLACEHOLDER" class="d-block w-100">
-                    <div class="carousel-caption">
-                        <h3>Vinyl Cutting</h3>
-                        <p>Stickers that you can apply anywhere</p>
-                        <a href="vinylcutting.html">Learn More</a>
-                    </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/nathanbg.jfif" alt="PLACEHOLDER" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h3>Vinyl Cutting</h3>
+                    <p>Stickers that you can apply anywhere</p>
+                    <a href="vinylcutting.html">Learn More</a>
                 </div>
+            </div>
+        
+            <div class="carousel-item">
+                <img src="images/nathanbg.jfif" alt="PLACEHOLDER" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h3>Laser Cutting</h3>
+                    <p>Sustainable plywood sheets, meticulously cut by a laser and assembled into stationary</p>
+                    <a href="lasercutting.html">Learn More</a>
+                </div>
+            </div>
             
-                <div class="carousel-item">
-                    <img src="images/nathanbg.jfif" alt="PLACEHOLDER" class="d-block w-100">
-                    <div class="carousel-caption">
-                        <h3>Laser Cutting</h3>
-                        <p>Sustainable plywood sheets, meticulously cut by a laser and assembled into stationary</p>
-                        <a href="lasercutting.html">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="carousel-item">
-                    <img src="images/nathanbg.jfif" alt="PLACEHOLDER" class="d-block w-100">
-                    <div class="carousel-caption">
-                        <h3>3D Printing</h3>
-                        <p>Biodegradeable PLA, formed into any object you can dream of</p>
-                        <a href="printingpla.html">Learn More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-
-        <br>
-        <br>
-
-        <!-- BUTTON TO BUY -->
-        <!-- Because it's summer (i cant go to makerspace) this temporarily becomes preorder-->
-        <div class="d-grid col-5 mx-auto">
-            <a href="preorder.html" class="btn btn-lg btn-block orderbutton" role="button">Preorder</a>
-        </div>
-
-        <br>
-        <br>
-
-        <div>
-            <h2>
-                Brightening the world, one cut at a time
-            </h2>
-            <hr>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <h2 class="text-center">A</h2>
-                    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
-                </div>
-                <div class="col-md">
-                    <h2 class="text-center">B</h2>
-                    <p>BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</p>
-                </div>
-                <div class="col-md">
-                    <h2 class="text-center">C</h2>
-                    <p>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</p>
+            <div class="carousel-item">
+                <img src="images/weltcane.webp" alt="Welt Cane, 3D print and wood" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h3>3D Printing</h3>
+                    <p>Biodegradeable PLA, formed into any object you can dream of</p>
+                    <a href="printingpla.html">Learn More</a>
                 </div>
             </div>
         </div>
 
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- BUTTON TO BUY -->
+    <!-- Because it's summer (i cant go to makerspace) this temporarily becomes preorder-->
+    <div class="d-grid col-5 mx-auto">
+        <a href="preorder.html" class="btn btn-lg btn-block orderbutton" role="button">Preorder</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <h2>
+            Brightening the world, one cut at a time
+        </h2>
+        <hr>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <h2 class="text-center">A</h2>
+                <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+            </div>
+            <div class="col-md">
+                <h2 class="text-center">B</h2>
+                <p>BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</p>
+            </div>
+            <div class="col-md">
+                <h2 class="text-center">C</h2>
+                <p>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</p>
+            </div>
+        </div>
     </div>
 
 
@@ -132,7 +129,7 @@
     <br>
 
 
-    <footer class="text-center home-footer">
+    <footer class="text-center">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Social media -->
