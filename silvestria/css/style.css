@@ -150,3 +150,55 @@ li > a:hover {
     padding-left: 100px;
     padding-right: 100px;
 }
+
+.normalize{
+    font-family: "blanket", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+form > label{
+    /* FONT AND COLOR */
+    font-family: "blanket", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFC18C;
+
+    /* help from https://stackoverflow.com/questions/638347/text-aligncenter-wont-work-with-form-label-tag */
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+
+/* help from https://stackoverflow.com/questions/3580063/how-to-center-a-textarea-using-css */
+
+form > input{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFC18C;
+    color: #563232;
+    font-size: 20px;
+}
+
+form > textarea{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFC18C;
+    color: #361212;
+    font-size: 20px;
+}
+
+.submitbutton{
+    width: 25%;
+    color: #FFC18C;
+    background-color: #D73502;
+    font-size: 30px;
+}
+
+.ordercontainer{
+    width: 50%;
+}
