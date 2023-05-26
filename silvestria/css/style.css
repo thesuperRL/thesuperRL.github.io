@@ -40,7 +40,7 @@ footer {
 }
 
 .orderbutton {
-    width: 500px;
+    width: 100%;
     font-size: 50px;
     background-color: #DA6D42;
 
@@ -97,29 +97,42 @@ footer {
     font-size: 25px;
 }
 
-.whyus {
+.importantbox {
     background-color: #66493A;
     color: #FFC18C;
     width: 90%;
 }
 
-.whyus > h1 {
+.importantbox > h1 {
     color: #D73502;
     font-size: 50px;
 }
 
-.whyus > h3 {
+.importantbox > h3 {
     color: #FFC18C;
     font-size: 35px;
 }
 
-.whyus > p {
-    text-indent: 50px;
+.importantbox > p {
     color: #FFC18C;
     font-size: 30px;
+    padding: 10px;
+}
+
+.importantbox > p > a{
+    color: #FFC18C;
+}
+
+.importantbox > p > a:hover{
+    color: #D73502;
 }
 
 .list-subtitle{
     font-size: 50px;
     padding: 20px;
+}
+
+.cofounders{
+    padding-left: 100px;
+    padding-right: 100px;
 }
