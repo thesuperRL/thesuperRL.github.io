@@ -82,13 +82,44 @@ footer {
     color: #D73502;
 }
 
+.carousel-caption > a:hover{
+    color: #FFC18C;
+}
+
 .carousel-item > img{
     /* help from https://www.gavsblog.com/blog/change-the-aspect-ratio-of-an-image-using-css */
     aspect-ratio: 16/9;
-    filter: brightness(50%);
+    filter: brightness(60%);
     object-fit: cover;
 }
 
 .col-md > p{
     font-size: 25px;
+}
+
+.whyus {
+    background-color: #66493A;
+    color: #FFC18C;
+    width: 90%;
+}
+
+.whyus > h1 {
+    color: #D73502;
+    font-size: 50px;
+}
+
+.whyus > h3 {
+    color: #FFC18C;
+    font-size: 35px;
+}
+
+.whyus > p {
+    text-indent: 50px;
+    color: #FFC18C;
+    font-size: 30px;
+}
+
+.list-subtitle{
+    font-size: 50px;
+    padding: 20px;
 }
