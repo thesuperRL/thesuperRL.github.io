@@ -119,6 +119,20 @@ footer {
     padding: 10px;
 }
 
+li {
+    color: #FFC18C;
+    font-size: 30px;
+    padding: 10px;
+}
+
+li > a {
+    color: #FFC18C;
+}
+
+li > a:hover {
+    color: #D73502;
+}
+
 .importantbox > p > a{
     color: #FFC18C;
 }
