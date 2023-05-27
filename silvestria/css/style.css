@@ -202,3 +202,8 @@ form > textarea{
 .ordercontainer{
     width: 50%;
 }
+
+.navlogo{
+    width: 85px;
+    height: 85px;
+}
