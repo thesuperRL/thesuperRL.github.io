@@ -9,9 +9,11 @@ body {
     color: #66493A;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     /* FONT AND COLOR */
-    font-family: "timberline", sans-serif;
+    font-family: "lemongrass-script", sans-serif;
     font-weight: 400;
     font-style: normal;
 
@@ -23,20 +25,26 @@ footer {
 }
 
 .title {
-    animation: fadeIn 2s; 
+    animation: fadeIn 2s;
     padding: 15px;
 }
 
 @keyframes fadeIn {
+
     /* help https://blog.hubspot.com/website/css-fade-in */
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-.navbar-nav > li{
+.navbar-nav>li {
     text-align: center;
-    padding-left:75;
-    padding-right:75px;
+    padding-left: 75;
+    padding-right: 75px;
 }
 
 .orderbutton {
@@ -57,7 +65,7 @@ footer {
     color: #FFC18C;
 }
 
-.displaycarousel{
+.displaycarousel {
     width: 90% !important;
     height: auto !important;
     object-fit: cover;
@@ -67,33 +75,33 @@ footer {
     overflow: hidden;
 }
 
-.carousel-caption > h3{
+.carousel-caption>h3 {
     font-size: 70px;
 }
 
-.carousel-caption > p{
+.carousel-caption>p {
     font-size: 40px;
 }
 
-.carousel-caption > a{
+.carousel-caption>a {
     font-size: 40px;
     padding: 0px;
     margin: 0px;
     color: #D73502;
 }
 
-.carousel-caption > a:hover{
+.carousel-caption>a:hover {
     color: #FFC18C;
 }
 
-.carousel-item > img{
+.carousel-item>img {
     /* help from https://www.gavsblog.com/blog/change-the-aspect-ratio-of-an-image-using-css */
     aspect-ratio: 16/9;
     filter: brightness(60%);
     object-fit: cover;
 }
 
-.col-md > p{
+.col-md>p {
     font-size: 25px;
 }
 
@@ -103,17 +111,17 @@ footer {
     width: 90%;
 }
 
-.importantbox > h1 {
+.importantbox>h1 {
     color: #D73502;
     font-size: 50px;
 }
 
-.importantbox > h3 {
+.importantbox>h3 {
     color: #FFC18C;
     font-size: 35px;
 }
 
-.importantbox > p {
+.importantbox>p {
     color: #FFC18C;
     font-size: 30px;
     padding: 10px;
@@ -125,39 +133,39 @@ li {
     padding: 10px;
 }
 
-li > a {
+li>a {
     color: #FFC18C;
 }
 
-li > a:hover {
+li>a:hover {
     color: #D73502;
 }
 
-.importantbox > p > a{
+.importantbox>p>a {
     color: #FFC18C;
 }
 
-.importantbox > p > a:hover{
+.importantbox>p>a:hover {
     color: #D73502;
 }
 
-.list-subtitle{
+.list-subtitle {
     font-size: 50px;
     padding: 20px;
 }
 
-.cofounders{
+.cofounders {
     padding-left: 100px;
     padding-right: 100px;
 }
 
-.normalize{
+.normalize {
     font-family: "blanket", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-form > label{
+form>label {
     /* FONT AND COLOR */
     font-family: "blanket", sans-serif;
     font-weight: 400;
@@ -172,7 +180,7 @@ form > label{
 
 /* help from https://stackoverflow.com/questions/3580063/how-to-center-a-textarea-using-css */
 
-form > input{
+form>input {
     width: 50%;
     display: block;
     margin-left: auto;
@@ -182,7 +190,7 @@ form > input{
     font-size: 20px;
 }
 
-form > textarea{
+form>textarea {
     width: 50%;
     display: block;
     margin-left: auto;
@@ -192,13 +200,17 @@ form > textarea{
     font-size: 20px;
 }
 
-.submitbutton{
+.submitbutton {
     width: 25%;
     color: #FFC18C;
     background-color: #D73502;
     font-size: 30px;
 }
 
-.ordercontainer{
+.ordercontainer {
     width: 50%;
+}
+
+.nav-link>h3 {
+    font-size: 32px;
 }
