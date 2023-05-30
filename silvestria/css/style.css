@@ -212,10 +212,10 @@ form>textarea {
 }
 
 .navlogo{
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
 }
 
-.nav-link>h3 {
-    font-size: 40px;
+.nav-link > h3 {
+    font-size: 30px;
 }
