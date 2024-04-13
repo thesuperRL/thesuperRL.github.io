@@ -705,7 +705,7 @@ const order = [
   104, 39, 84, 126, 7, 144, 78, 70, 99, 26, 23, 145,
 ];
 
-const STARTDATE = "2023-09-11";
+const STARTDATE = "2024-04-12";
 
 var app = (function () {
   "use strict";
