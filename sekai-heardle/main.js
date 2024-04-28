@@ -177,7 +177,7 @@ const dict = [
       "Cosmospice - Saki Tenma, Tsukasa Tenma, & Hatsune Miku (PinocchioP)",
   },
   {
-    url: "https://soundcloud.com/clicky1/bring-it-on-by-rin-x-len-x",
+    url: "https://soundcloud.com/shinjue/bring-it-on",
     answer:
       "Rettou Joutou - An Shiraishi, Kohane Azusawa, Rin Kagamine & Len Kagamine (Giga, Reol)",
   },
