@@ -378,7 +378,7 @@ const dict = [
       "Sekai wa Mada Hajimatte sura Inai - Wonderlands x Showtime & Hatsune Miku (PinocchioP)",
   },
   {
-    url: "https://soundcloud.com/nenerobo/full-metamo-reborn-more-more-jump-x-rin-kagamine",
+    url: "https://soundcloud.com/sh-hnmr-hgf69/full-metamo-reborn-more-more-jump-x-rin-kagamine",
     answer: "Metamo Re:born - MORE MORE JUMP! & Rin Kagamine (emon(Tes.))",
   },
   {
