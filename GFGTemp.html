@@ -43,7 +43,8 @@ Please, Detective $name, help me find her!
 (set: $hasPictures to false)
 (set: $witnessList to false)
 (set: $hasPinkCloth to false)
-(set: $knowPC to false)</tw-passagedata><tw-passagedata pid="3" name=" The Envelope" tags="" position="1200,575" size="100,100">&quot;$name, this just came in through the mail.&quot;
+(set: $knowPC to false)
+(set: $hasPic to false)</tw-passagedata><tw-passagedata pid="3" name=" The Envelope" tags="" position="1200,575" size="100,100">&quot;$name, this just came in through the mail.&quot;
 
 &quot;Thanks,&quot; you reply.
 
@@ -98,15 +99,17 @@ You see a girl in pink, walking along a path. She stops, then the feed cuts out.
 
 On the next picture, the car is driving away. 
 
-{(if: (random: 1, 10) &lt;= 8)[
+{(if: $hasPic is false)[
 
-You&#39;re missing the middle section, but maybe there&#39;s something else. Maybe you need to take another look.
+You&#39;re missing the middle section, but maybe there&#39;s something else. Maybe you need to take another look at these pictures. A more careful one.
+
+(set: $hasPic to true)
 
 ] (else:)[
 
 Wait... there&#39;s a odd-colored rock in the second picture. Why is it pink?
 
-That wasn&#39;t there a second ago. Maybe the crime scene contains some clues. 
+That wasn&#39;t there a second ago. Maybe the crime scene contains some clues. You should probably check with the police again.
 
 {(if: $hasGlint is 1) [(set: $hasGlint to 2)]}
 
