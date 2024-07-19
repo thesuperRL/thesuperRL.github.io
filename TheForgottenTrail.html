@@ -9,9 +9,15 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play GFG Children Story.</tw-noscript></noscript></tw-story>
-<tw-storydata name="GFG Children Story" startnode="1" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="CD681ED3-1D35-4F80-B669-F9E75CD1DE49" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Player Name" tags="" position="1200,325" size="100,100">Enter your name:
+<tw-storydata name="GFG Children Story" startnode="1" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="CD681ED3-1D35-4F80-B669-F9E75CD1DE49" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-passage img {
+	display: block;
+	margin: auto;
+  	height: 300px;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Player Name" tags="" position="1200,75" size="100,100">Enter your name:
 (set: $name to (prompt: &quot;Enter the name of the Detective:&quot;, &quot;Ffion&quot;))
-When you&#39;re ready, recall your [[Backstory]].</tw-passagedata><tw-passagedata pid="2" name=" Reading the Case" tags="" position="1200,700" size="100,100">It&#39;s a letter from a distraught father.
+When you&#39;re ready, [[Start the game]].</tw-passagedata><tw-passagedata pid="2" name=" Reading the Case" tags="" position="1200,700" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/893657462790557716/1263673045067759668/8-qjfBCORgxQh3xiI_1.png?ex=669b16bb&amp;is=6699c53b&amp;hm=d60c17dd2e240fdf9ba7db327adbdf47c5e3bb388247d83be7d29042fcb2086a&amp;=&amp;format=webp&amp;quality=lossless&amp;width=1024&amp;height=1024&quot;&gt;
+
+It&#39;s a letter from a distraught father.
 
 ---
 
@@ -23,7 +29,7 @@ A car slowed down near her, and she stopped to talk to them. I glanced down to r
 
 Immediately I dropped my newspaper, and ran to pick up my daughter&#39;s bike. I pedaled like I never had before, but could only watch as they took her away.
 
-I pleaded for this case to be taken up by the police, yet there was delay after delay by telephone operators and no response. They gave up quickly after they didn&#39;t find much. They even suspect me of committing the crime!
+I pleaded for this case to be taken up by the police, yet there was delay after delay by telephone operators and no response. They gave up quickly after they only found a few details. They even suspect me of committing the crime!
 
 Please, Detective $name, help me find her!
 
@@ -33,24 +39,22 @@ Please, Detective $name, help me find her!
 
 [[Seems like a great case to kick off your career! | Investigations]]
 
----
-
-(sources)
-(https://cdnc.ucr.edu/?a=d&amp;d=NVR19910610.1.1&amp;e=-------en--20--1--txt-txIN--------)
-(https://en.wikipedia.org/wiki/Kidnapping_of_Jaycee_Dugard)
-
 (set: $hasGlint to 1)
 (set: $hasPictures to false)
 (set: $witnessList to false)
 (set: $hasPinkCloth to false)
 (set: $knowPC to false)
-(set: $hasPic to false)</tw-passagedata><tw-passagedata pid="3" name=" The Envelope" tags="" position="1200,575" size="100,100">&quot;$name, this just came in through the mail.&quot;
+(set: $hasPic to false)</tw-passagedata><tw-passagedata pid="3" name=" The Envelope" tags="" position="1200,575" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263669599887429713/5F479205-1E30-4E04-8B38-AD39B21B5BCE.webp?ex=669b1386&amp;is=6699c206&amp;hm=9631dd89c38a3460f5f86b23bc93b07c0e077fb1a0fba233cf660920cb80bffd&amp;=&amp;format=webp&amp;width=1870&amp;height=1254&quot;&gt;
+
+&quot;$name, this just came in through the mail.&quot;
 
 &quot;Thanks,&quot; you reply.
 
 &quot;The client requested that you read this as soon as possible - after all, it happened a few hours ago, and there has been no follow-up.&quot;
 
-&quot;Oh, really? Give me a minute.&quot; [[You drain the remains of your coffee, open the envelope, and take a look | Reading the Case]]</tw-passagedata><tw-passagedata pid="4" name=" Investigations" tags="" position="1200,825" size="100,100">You eagerly kick into investigating, but there&#39;s so many places to start.
+&quot;Oh, really? Give me a minute.&quot; [[You drain the remains of your coffee, open the envelope, and take a look | Reading the Case]]</tw-passagedata><tw-passagedata pid="4" name=" Investigations" tags="" position="1200,825" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263662974091001896/85307732-2012-4E03-9687-7A91CDF1A7B6.webp?ex=669b0d5a&amp;is=6699bbda&amp;hm=c98f18729c96b5ee052e7dccfa6aad5527658a929c8b0133e11a53bd57db2d06&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
+
+You eagerly kick into investigating, but there&#39;s so many places to start.
 
 [[Ask the police for their evidence | Asking the Court]]
 [[Ask the client | Asking the Client]]
@@ -58,15 +62,17 @@ Please, Detective $name, help me find her!
 [[ Examine the pictures| Examine the Pictures]]
 ]}
 {(if: $hasGlint is 3)[
-[[ Ask to enter the Crime Scene | The Crime Scene]]
+[[ Enter the Crime Scene | The Crime Scene]]
 ]}
 {(if: $hasPinkCloth is true)[
 [[Examine the Pink Cloth | Examine Cloth]]
 ]}
 {(if: $witnessList is true)[
 [[Ask the Witnesses | Asking Witnesses]]
-]}</tw-passagedata><tw-passagedata pid="5" name=" Asking the Court" tags="" position="1075,975" size="100,100">{(if: $hasPictures is false)[
-The police are reluctant to cooperate, but you finally get something out of them. 
+]}</tw-passagedata><tw-passagedata pid="5" name=" Asking the Court" tags="" position="1075,975" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263745121321750608/IMG_2520.jpg?ex=669c029c&amp;is=669ab11c&amp;hm=db49b814aa6f4751f5f99be6014a72f68c4d0596c6ebdb9f55b3de1cdce634b0&amp;=&amp;format=webp&amp;width=576&amp;height=1060&quot;&gt;
+
+{(if: $hasPictures is false)[
+The police are reluctant to cooperate with a random private detective, but you finally get something out of them. 
 
 It&#39;s pictures taken from a roadside camera that morning. 
 (set: $hasPictures to true)
@@ -77,31 +83,35 @@ The police let you enter the crime scene. Maybe you&#39;ll find something.
 The police are reluctant to give any further clues.
 ]}
 
-[[You return to your investigations | Investigations]]</tw-passagedata><tw-passagedata pid="6" name="Backstory" tags="" position="1200,450" size="100,100">Born and raised by a family heavily engrossed in law, you have seen the injustice of the world. Since high school, you&#39;ve sat in many unsolved cases that left families shattered without anyone brought to law. 
+[[You return to your investigations | Investigations]]</tw-passagedata><tw-passagedata pid="6" name="Backstory" tags="" position="1200,325" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263666815834394774/AC0C90C0-EDE5-4CD3-8D6D-F61424A24F25.webp?ex=669b10ee&amp;is=6699bf6e&amp;hm=f7a69c8920d9b2d2b19298ae5f2d27d65930b307a737ead6c6b2c71226937350&amp;=&amp;format=webp&amp;width=700&amp;height=700&quot;&gt;
+
+Born and raised by a family heavily engrossed in law, you have seen the injustice of the world through your own eyes. Since high school, you&#39;ve sat in many unsolved cases that left families shattered without anyone brought to law. 
 
 It&#39;s this pursuit of justice that led you to become a private detective. You&#39;ve only taken cases of missing children - in part because of the lack of interest in this area, and in part because of your brother who was abducted before you even got to know him. Moving through that was a hellish experience you want nobody else to endure.
 
-But in this pursuit you gained a key ability. Maybe it&#39;s due to your talents, or your experience sitting in on many cases, but you can close your eyes to visualize the crime scene after being given enough information. You&#39;re eager to give this a try in a practical case.
+But in this pursuit you gained a key ability. Maybe it&#39;s due to your talents, or your experience sitting in on many cases, but you can close your eyes to visualize the crime scene after being given enough information. [[You&#39;re eager to give this a try in a practical case. | Backstory 2]]
+</tw-passagedata><tw-passagedata pid="7" name=" Asking the Client" tags="" position="1200,975" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263675220003258418/859C3ADF-0F59-4303-9122-3263C1DAF62A.webp?ex=669b18c2&amp;is=6699c742&amp;hm=def08f7b5f35a1d315e0952925ed998b8280d1760e14ec4b8b7ac39b512f15a5&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
 
-It&#39;s been a peaceful morning. The firm you work at has just started its operations. Living in a mostly peaceful town, you&#39;ve gotten no commissions in the three years that you&#39;ve worked here. 
-
-You&#39;re ready for another day at the table, sipping coffee and reading news, when [[an envelope is dropped on your table by your secretary, Sam. | The Envelope]].</tw-passagedata><tw-passagedata pid="7" name=" Asking the Client" tags="" position="1200,975" size="100,100">You sit down with Adam in his living room. He&#39;s disorganized, having recently had a huge argument with his wife. The bags under his eyes give away that he&#39;s in a state of grief and unhappiness.
+You sit down with Adam in his living room. He&#39;s disorganized, having recently had a huge argument with his wife. The bags under his eyes give away that he&#39;s in a state of grief and unhappiness.
 
 &quot;Hi $name, What do you have to ask me?&quot;
 
-{(if: $knowPC is true) [
-[[Ask about the Witnesses | The Witnesses]]]}
+{(if: $knowPC is true) [[[Ask about the Witnesses | The Witnesses]]]}
 [[Ask about the morning |The Morning]]
 
-[[Let&#39;s go back to investigating | Investigations]]</tw-passagedata><tw-passagedata pid="8" name=" Examine the Pictures" tags="" position="1325,975" size="100,100">Pictures of a road, a bus stop, and an average-sized grey car. 
+[[Let&#39;s go back to investigating | Investigations]]</tw-passagedata><tw-passagedata pid="8" name=" Examine the Pictures" tags="" position="1325,975" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263676646938906716/BA0EBF46-70CF-400D-89E1-A142790848B3.webp?ex=669bc2d6&amp;is=669a7156&amp;hm=6519e60e5d22e51fe315fb85432ad1a7242ba2be1f7b79a44fb9ebd99e1dced6&amp;=&amp;format=webp&amp;width=1060&amp;height=1060&quot;&gt;
 
-You see a girl in pink, walking along a path. She stops, then the feed cuts out. 
+Pictures of a road, a bus stop, and an average-sized grey car. 
 
-On the next picture, the car is driving away. 
+You see a group of people walk up to the car in the first picture. You can&#39;t very well identify the victim.
+
+On the next picture, the car is driving away, and the crowd has already left.
+
+These cameras! you&#39;ve been complaining about them for years in your courtroom experience. They always take pictures at such long intervals that it doesn&#39;t provide anything useful. It&#39;s not the police&#39;s fault, and nobody could have foreseen this though, so let&#39;s have that conversation with the government another day.
 
 {(if: $hasPic is false)[
 
-You&#39;re missing the middle section, but maybe there&#39;s something else. Maybe you need to take another look at these pictures. A more careful one.
+But for now, you&#39;re missing the middle section, but maybe there&#39;s something else. Maybe you need to take another look at these pictures. A more careful one.
 
 (set: $hasPic to true)
 
@@ -120,11 +130,13 @@ But for now, [[let&#39;s go back to investigating | Investigations]]</tw-passage
 He retreats into his office, writes for a bit, and hands you a slip of paper with a list on it. 
 (set: $witnessList to true)
 
-[[ Let&#39;s talk about something else | Asking the Client]]</tw-passagedata><tw-passagedata pid="10" name="The Morning" tags="" position="1150,1125" size="100,100">I saw my daughter leave the house this morning in her new pink dress. She would usually walk up the hill to the bus stop. There are few houses built on the side of the road though, since it is a hill. Probably the only people who would have seen he is the students at the bus stop.
+[[ Let&#39;s talk about something else | Asking the Client]]</tw-passagedata><tw-passagedata pid="10" name="The Morning" tags="" position="1150,1125" size="100,100">I saw my daughter leave the house this morning in her new pink dress. She would usually walk up the hill to the bus stop. There are few houses built on the side of the road though, since it is a hill. Probably the only people who would have seen her are the students at the bus stop.
 
 (set: $knowPC to true)
 
-[[ Let&#39;s talk about something else | Asking the Client]]</tw-passagedata><tw-passagedata pid="11" name=" The Crime Scene" tags="" position="1450,975" size="100,100">The police there reluctantly let you in, after you show them many licenses. Geez, security is tight here.
+[[ Let&#39;s talk about something else | Asking the Client]]</tw-passagedata><tw-passagedata pid="11" name=" The Crime Scene" tags="" position="1450,975" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263662974523146333/529BC444-6967-4091-9D4C-8587135A3643.webp?ex=669b0d5a&amp;is=6699bbda&amp;hm=b332af9c57d12a39a37cc3fbb07ad6a1a92e438dd98f303b355df700d6b7e33e&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
+
+The police there reluctantly let you in, after you show them many licenses. Geez, security is tight here.
 
 Circled by caution tape, it&#39;s your first time in a crime scene. 
 
@@ -144,7 +156,9 @@ You search around for an hour or so. You can&#39;t seem to find anything else.
 
 [[Let&#39;s go back to investigating | Investigations]]
 
-]}</tw-passagedata><tw-passagedata pid="12" name=" Asking Witnesses" tags="" position="1850,975" size="100,100">{(if: $hasGlint is 4)[
+]}</tw-passagedata><tw-passagedata pid="12" name=" Asking Witnesses" tags="" position="1850,975" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263694956690669598/B123F7B9-B007-45B8-A63C-0E945A54D363.webp?ex=669bd3e3&amp;is=669a8263&amp;hm=aa5c56f9872bd2e16b75f7c37a343c414e248dc2e590e0c6316515655c0b88ae&amp;=&amp;format=webp&amp;width=700&amp;height=700&quot;&gt;
+
+{(if: $hasGlint is 4)[
 
 Initially, confusion dawns on the children. but soon, a timid hand is raised at the back of the group.
 
@@ -160,7 +174,9 @@ You ask the witnesses one by one. They don&#39;t speak up. Maybe you need to jog
 
 The answer is close, but [[let&#39;s go back to investigating | Investigations]]
 
-]}</tw-passagedata><tw-passagedata pid="13" name=" Examine Cloth" tags="" position="1575,975" size="100,100">{(if: $knowPC)[
+]}</tw-passagedata><tw-passagedata pid="13" name=" Examine Cloth" tags="" position="1575,975" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263675683541090405/F4002612-5A94-4C51-9823-C46CCA7CB4F0.webp?ex=669b1930&amp;is=6699c7b0&amp;hm=8f5b1eb4dc066d1d71c55a0a90ff3327d6756f9e5ac9087cea7eb73626ed5345&amp;=&amp;format=webp&amp;width=700&amp;height=700&quot;&gt;
+
+{(if: $knowPC)[
 
 It&#39;s a pink cloth charred around the edges. 
 
@@ -176,24 +192,28 @@ There&#39;s a clear conclusion - a taser.
 
 You&#39;re not quite sure what this is, or even if it&#39;s related. [[Let&#39;s come back later. | Investigations]]
 
-]}</tw-passagedata><tw-passagedata pid="14" name=" Reconstruction" tags="" position="1850,1325" size="100,100">The world around you fades to grey, as you begin using your abilities to reimagine the crime scene from Claudia&#39;s point of view.
+]}</tw-passagedata><tw-passagedata pid="14" name=" Reconstruction" tags="" position="1850,1100" size="100,100">The world around you fades to grey, as you begin using your abilities to reimagine the crime scene from Claudia&#39;s point of view.
 (set: $trailMedal to 0)
 
-[[Continue]]</tw-passagedata><tw-passagedata pid="15" name="Continue" tags="" position="1850,1450" size="100,100">You see yourself as the victim. 
+[[Continue | Refresher]]</tw-passagedata><tw-passagedata pid="15" name="Continue" tags="" position="1850,1350" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263689556897828944/34ED22AB-AB1C-4920-93F2-462800E8E091.webp?ex=669b261c&amp;is=6699d49c&amp;hm=443c7e9d14a7e272c15d18281dea93cf9865a81a34fe1050916959232b115a36&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
+
+You see yourself as Claudia
 
 Waking up at 7am, you promptly dress in your new pink outfit, and descend downstairs to meet the bus. 
 
 At breakfast, you look at your new phone. Scrolling through the settings, you find that many things are disabled. 
 
 [[Let&#39;s head off quickly to school. I might miss the bus |Next]]
-[[Let&#39;s take another look at the settings | Settings]]</tw-passagedata><tw-passagedata pid="16" name=" Settings" tags="" position="2075,1450" size="100,100">While checking the settings, you find that location sharing with your parents haven&#39;t been on. 
+[[Let&#39;s take another look at the settings | Settings]]</tw-passagedata><tw-passagedata pid="16" name=" Settings" tags="" position="2075,1350" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263690895132332152/095D68A9-DC39-4D02-ABCB-C78D94F80481.webp?ex=669b275b&amp;is=6699d5db&amp;hm=a6a2ed776fb90e890ad95b2c70b2562231058a44c2e464c3c1d466040afddbdf&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
+
+While checking the settings, you find that location sharing with your parents haven&#39;t been on. 
 
 You&#39;ve never been fond of sharing your location with your parents, amid frequent outings with your friends. 
 
 But maybe it&#39;s for your own safety.
 
 [[Enable]]
-[[Keep Disabled]]</tw-passagedata><tw-passagedata pid="17" name="Enable" tags="" position="2025,1575" size="100,100">You turn on location sharing within your family. It can&#39;t hurt, right?
+[[Keep Disabled]]</tw-passagedata><tw-passagedata pid="17" name="Enable" tags="" position="2025,1475" size="100,100">You turn on location sharing within your family. It can&#39;t hurt, right?
 
 (As the detective, you quickly realize that this isn&#39;t possible. The family was unable to find the victim on their phone. But maybe this is a good idea...)
 
@@ -201,16 +221,19 @@ But maybe it&#39;s for your own safety.
 
 (You earned a Trail medal!) (set: $trailMedal to $trailMedal + 1)
 
-[[Move on... |Next]]</tw-passagedata><tw-passagedata pid="18" name="Keep Disabled" tags="" position="2150,1575" size="100,100">You&#39;ve never been a fan of sharing your location. 
+[[Move on... |Next]]</tw-passagedata><tw-passagedata pid="18" name="Keep Disabled" tags="" position="2150,1475" size="100,100">You&#39;ve never been a fan of sharing your location. 
 
 (As the detective, this is indeed the most probable choice of the victim.)
 
-[[Move on... |Next]]</tw-passagedata><tw-passagedata pid="19" name="Next" tags="" position="1850,1575" size="100,100">You exit the house, and walk a bit along your way
+[[Move on... |Next]]</tw-passagedata><tw-passagedata pid="19" name="Next" tags="" position="1850,1475" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263693625691476048/F0E3DCF3-3A92-4792-9A80-AF1A7D05BA6E.webp?ex=669b29e6&amp;is=6699d866&amp;hm=ab45b22198637ea47f796cfa860eda19586bc78cea6a363532c9f0ffea51ff18&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
+
+
+You exit the house, and walk a bit along your way
 
 Soon, you find a grey car parked close to the sidewalk. It&#39;s windows is rolled down, and you see someone. It looks like they are asking for directions.
 
 [[Approach them]]
-[[Leave them be]]</tw-passagedata><tw-passagedata pid="20" name="Approach them" tags="" position="1850,1700" size="100,100">You, a kind person, approaches them to ask what&#39;s wrong.
+[[Leave them be]]</tw-passagedata><tw-passagedata pid="20" name="Approach them" tags="" position="1850,1600" size="100,100">You, a kind person, approaches them to ask what&#39;s wrong.
 
 (As the detective, this is indeed the most probable choice of the victim.)
 
@@ -220,7 +243,7 @@ A blinding shock paired with sharp pain sends you to the ground. Rough hands stu
 
 [[Your clues cut out, and the real world slowly reappears into view in front of you. |Transition]]
 
-Detective $name, you have $trailMedal Trail Medals.</tw-passagedata><tw-passagedata pid="21" name="Leave them be" tags="" position="1975,1700" size="100,100">You stay away, not keen to engage a stranger in speech. The bus is almost here, it&#39;s time to hurry up.
+Detective $name, you have $trailMedal Trail Medals.</tw-passagedata><tw-passagedata pid="21" name="Leave them be" tags="" position="1975,1600" size="100,100">You stay away, not keen to engage a stranger in speech. The bus is almost here, it&#39;s time to hurry up.
 
 (As the detective, you quickly realize that this isn&#39;t possible. The victim would have never been captured. But maybe this is a good idea...)
 
@@ -256,7 +279,9 @@ As yo&#39;ve seen experienced detectives do many times, you spread out all the p
 [[Check Owner1|owner1]]
 [[Check Owner2|Owner2]]
 
-[[Return to your desk|desk]]</tw-passagedata><tw-passagedata pid="26" name="testimonies from the victim&#39;s school" tags="" position="2350,575" size="100,100">Time flies back to two weeks ago, when you talked with the school teacher who taught Claudia for the first time...
+[[Return to your desk|desk]]</tw-passagedata><tw-passagedata pid="26" name="testimonies from the victim&#39;s school" tags="" position="2350,575" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263662973659123722/509AAC5F-FEBF-433D-A846-42E55A949DF9.webp?ex=669b0d5a&amp;is=6699bbda&amp;hm=b5b14f0a0c111e6e68216d7c9afe0bd75a59d84ca01ba02d8ccd18335b4846ac&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
+
+Time flies back to two weeks ago, when you talked with the school teacher who taught Claudia for the first time...
 
 [[Teacher|Teacher]]
 [[Friend|Friend]]
@@ -505,7 +530,42 @@ The next day, you wake up to the sound of your secretary downstairs, gretting th
 
 The victim grows to be a published author of books related to this tragedy, and while details about your rescue makes you proud of this achievement, what really brings a smile to your face is the awareness (and cases to your firm) that this bestselling book brings. 
 
-(GOOD END)</tw-passagedata></tw-storydata>
+(GOOD END)</tw-passagedata><tw-passagedata pid="76" name="Start the game" tags="" position="1200,200" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X=&quot;)[=
+&#39;&#39;THE FORGOTTEN TRAIL&#39;&#39;
+
+&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263662974523146333/529BC444-6967-4091-9D4C-8587135A3643.webp?ex=669b0d5a&amp;is=6699bbda&amp;hm=b332af9c57d12a39a37cc3fbb07ad6a1a92e438dd98f303b355df700d6b7e33e&amp;=&amp;format=webp&amp;width=1254&amp;height=1254&quot;&gt;
+
+Based on a (link:&quot;true story.&quot;)[(gotoURL:&quot;https://en.wikipedia.org/wiki/Kidnapping_of_Jaycee_Dugard&quot;)]
+
+[[Begin the game |Backstory]]
+[[Quick Tutorial]]</tw-passagedata><tw-passagedata pid="77" name="Quick Tutorial" tags="" position="1325,200" size="100,100">Welcome to The Forgotten Trail!
+
+The game is divided into a series of levels, called &quot;rooms&quot;. You begin at the first room, and move on until you reach the last room (room 3).
+
+You play as a detective, gathering clues and talking to witnesses in each room. Once you collect enough clues, you will unlock the Reconstruction phase. 
+
+During the reconstruction phase, you are able to visualize what happened to the victim from their point of view. During this event, you are able to make certain choices. If this choice would have helped the victim avoid the situation / escape easier / convey their location better, then you would gain a Trail Medal! The number of trail medals that you have at the end of the third (last) room determines if you win the game or not.
+
+There is no time limit for a room, though if you wish to increase the difficulty you may choose to set a 15-20 minute timer (approximately the time it would take). 
+
+NOTE: Please don&#39;t use the twine back button. 
+
+[[Tips (may spoil certain parts) | Tips]]</tw-passagedata><tw-passagedata pid="78" name=" Tips" tags="" position="1325,325" size="100,100">
+* If you seem stuck, remember to check certain locations again. Maybe something that wasn&#39;t there before has unlocked.
+
+* Read each page very carefully! Sometimes a piece that you think is insignificant can clue you in on your next step.</tw-passagedata><tw-passagedata pid="79" name=" Backstory 2" tags="" position="1200,450" size="100,100">&lt;img src=&quot;https://media.discordapp.net/attachments/1261619608549593109/1263669599887429713/5F479205-1E30-4E04-8B38-AD39B21B5BCE.webp?ex=669b1386&amp;is=6699c206&amp;hm=9631dd89c38a3460f5f86b23bc93b07c0e077fb1a0fba233cf660920cb80bffd&amp;=&amp;format=webp&amp;width=1870&amp;height=1254&quot;&gt;
+
+The firm you work at has just started its operations for the day. It&#39;s been a normal morning. Living in a mostly peaceful town, you&#39;ve gotten no commissions in the three years that you&#39;ve worked here. 
+
+You&#39;re ready for another day at the table, sipping coffee and reading news, when [[a newspaper and letter is dropped on your table by your secretary, Sam. | The Envelope]].</tw-passagedata><tw-passagedata pid="80" name=" Refresher" tags="" position="1850,1225" size="100,100">It&#39;s your first time giving this a try in an actual crime scenario, so maybe you need a refresher.
+
+Here, no matter how realistic it seems, it&#39;s just you as a detective, using your powers to imagine yourself as the victim with all these clues.
+
+But sometimes you get choices, like the victim once did. Making the correct one sometimes can remind you of something that a detective should do. It&#39;s a grand sense of achievement, almost as if you are getting a medal.
+
+A &quot;Trail Medal&quot; if you will.
+
+[[I&#39;m ready. |Continue]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
