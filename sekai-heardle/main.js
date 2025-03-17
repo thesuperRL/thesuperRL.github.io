@@ -9798,6 +9798,7 @@ var app = (function () {
   function jn(e, t, n) {
     let r, s, i, o;
     u(e, Cn, (e) => n(26, (r = e))), u(e, On, (e) => n(27, (s = e)));
+    console.log(x(Vt.startDate));
     console.log(order[x(Vt.startDate)]);
     console.log(5 + 4 * order[x(Vt.startDate)]);
     console.log(s[order[x(Vt.startDate)]].answer);
