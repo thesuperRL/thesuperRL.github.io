@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searchable Input with Upward Dropdown</title>
+    <style>
+        .search-container {
+            position: relative;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        #suggestions {
+            position: absolute;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            background: white;
+            z-index: 1000;
+            display: none;
+            bottom: 100%; /* Positions above the input */
+            margin-bottom: -1px; /* Aligns border with input */
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        #submit-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #submit-btn:hover:not(:disabled) {
+            background-color: #45a049;
+        }
+
+        #submit-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .valid-input {
+            border-color: #4CAF50;
+        }
+
+        .invalid-input {
+            border-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <!-- Suggestions now appear above the input -->
+        <div id="suggestions"></div>
+        <input type="text" id="search-input" placeholder="Search for an item...">
+        <button id="submit-btn" disabled>Submit</button>
+    </div>
+
+    <script>
+        // Sample data - replace with your own collection
+        const items = [
+            "Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape",
+            "Honeydew", "Kiwi", "Lemon", "Mango", "Nectarine", "Orange", "Peach",
+            "Pear", "Quince", "Raspberry", "Strawberry", "Tangerine", "Watermelon"
+        ];
+
+        const searchInput = document.getElementById('search-input');
+        const suggestionsContainer = document.getElementById('suggestions');
+        const submitBtn = document.getElementById('submit-btn');
+
+        // Function to check if input matches any item (case-insensitive)
+        function isValidInput(input) {
+            return items.some(item =>
+                item.toLowerCase() === input.toLowerCase().trim()
+            );
+        }
+
+        // Function to filter items based on search input
+        function getSuggestions(searchTerm) {
+            return items.filter(item =>
+                item.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+
+        // Function to display suggestions
+        function showSuggestions(suggestions) {
+            if (suggestions.length === 0 || searchInput.value === '') {
+                suggestionsContainer.style.display = 'none';
+                return;
+            }
+
+            suggestionsContainer.innerHTML = '';
+            suggestions.forEach(suggestion => {
+                const div = document.createElement('div');
+                div.className = 'suggestion-item';
+                div.textContent = suggestion;
+                div.addEventListener('click', () => {
+                    searchInput.value = suggestion;
+                    suggestionsContainer.style.display = 'none';
+                    validateInput();
+                });
+                suggestionsContainer.appendChild(div);
+            });
+            suggestionsContainer.style.display = 'block';
+        }
+
+        // Function to validate input and update UI
+        function validateInput() {
+            const inputValue = searchInput.value.trim();
+            const isValid = isValidInput(inputValue);
+
+            // Update submit button state
+            submitBtn.disabled = !isValid;
+
+            // Update input border color
+            if (inputValue === '') {
+                searchInput.classList.remove('valid-input', 'invalid-input');
+            } else {
+                searchInput.classList.toggle('valid-input', isValid);
+                searchInput.classList.toggle('invalid-input', !isValid);
+            }
+        }
+
+        // Function to handle the submitted input
+        function handleSubmit() {
+            const inputValue = searchInput.value.trim();
+            console.log('Submitted value:', inputValue);
+            // You can do whatever you need with the input value here
+            alert(`You submitted: ${inputValue}`);
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', () => {
+            const suggestions = getSuggestions(searchInput.value);
+            showSuggestions(suggestions);
+            validateInput();
+        });
+
+        searchInput.addEventListener('focus', () => {
+            const suggestions = getSuggestions(searchInput.value);
+            showSuggestions(suggestions);
+            validateInput();
+        });
+
+        // Submit button click handler
+        submitBtn.addEventListener('click', handleSubmit);
+
+        // Also allow Enter key in the input field to submit
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !submitBtn.disabled) {
+                handleSubmit();
+            }
+        });
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (e.target !== searchInput && e.target !== submitBtn) {
+                suggestionsContainer.style.display = 'none';
+            }
+        });
+
+        // Initial validation
+        validateInput();
+    </script>
+</body>
+</html>
