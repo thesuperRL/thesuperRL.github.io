@@ -1073,6 +1073,7 @@ function createUnclosablePopup(content, options = {}) {
     // Set the popup content
     popup.innerHTML = `
                 <h4 id="end-result"> ${config.title} </h4>
+                <p>The correct answer was ${TodayAnswer}</p>
                 <p id="tries-used">${content}</p>
                 <button id="share-btn"> 
                     SHARE 
