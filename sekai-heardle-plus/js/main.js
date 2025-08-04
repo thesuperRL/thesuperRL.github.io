@@ -1165,8 +1165,8 @@ function generateContent(isGuessed) {
     });
 
     return `Project Sekai Heardle #${TodayNumber}, ${formattedDate}
-            
-            ${generateGuessNumbers(isGuessed)}`;
+
+${generateGuessNumbers(isGuessed)}`;
 }
 
 function generateGuessNumbers(isGuessed) {
