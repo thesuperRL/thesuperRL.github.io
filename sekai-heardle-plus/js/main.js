@@ -714,6 +714,9 @@ const TodayAnswer = SongDict[TodayNumber]['answer'];
 const TodayURL = SongDict[TodayNumber]['url'];
 console.log(TodayAnswer);
 
+// countdown recording
+let countdown;
+
 document.addEventListener('DOMContentLoaded', function () {
     const btnPlay = document.getElementById('btnPlay');
     const progressBar = document.getElementById('progressBar');
@@ -936,7 +939,7 @@ function checkGuess(inputValue) {
                 title: 'Nice Try!',
                 backgroundColor: '#f8d7da',
                 textColor: '#721c24',
-            guessed: false
+                guessed: false
             });
         }
 
@@ -1073,7 +1076,7 @@ function createUnclosablePopup(content, options = {}) {
     // Set the popup content
     popup.innerHTML = `
                 <h4 id="end-result"> ${config.title} </h4>
-                <p>The correct answer was ${TodayAnswer}</p>
+                <p>The correct answer was "${TodayAnswer}"</p>
                 <p id="tries-used">${content}</p>
                 <button id="share-btn"> 
                     SHARE 
@@ -1082,8 +1085,12 @@ function createUnclosablePopup(content, options = {}) {
                     </svg>
                 </button>
                 <div id="status"></div>
-                <p id="next-song-time"></p>
+                <p class="description">Time until the next song: </p>
+                <div class="countdown-display" id="countdown">23:59:59</div>
             `;
+
+    // Assign countdown
+    countdown = document.getElementById('countdown');
 
     // Show the popup and overlay
     overlay.style.display = 'block';
@@ -1160,12 +1167,12 @@ function generateContent(isGuessed) {
     const date = new Date();
     const formattedDate = date.toLocaleDateString('en-US', {
         timeZone: 'UTC',  // Specify UTC timezone
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
     });
 
-    return `Project Sekai Heardle #${TodayNumber}, ${formattedDate}
+    return `Project Sekai Daily Heardle #${TodayNumber}, ${formattedDate}
 
 ${generateGuessNumbers(isGuessed)}`;
 }
@@ -1181,7 +1188,7 @@ function generateGuessNumbers(isGuessed) {
 
     if (isGuessed) {
         clipboardemojis += rightSound;
-    } else{
+    } else {
         clipboardemojis += wrongSound;
     }
 
@@ -1196,7 +1203,7 @@ function generateGuessNumbers(isGuessed) {
     }
     console.log(clipboardemojis.length);
 
-    for  (let i = clipboardemojis.length/2; i < 7; i++) {
+    for (let i = clipboardemojis.length / 2; i < 7; i++) {
         clipboardemojis += unguessed;
         console.log("called");
     }
@@ -1214,3 +1221,33 @@ async function copyToClipboard(text) {
         return false;
     }
 }
+
+function updateCountdown() {
+    // Get current UTC time
+    const now = new Date();
+
+    // Calculate time until next UTC day (midnight)
+    const nextDay = new Date(now);
+    nextDay.setUTCDate(nextDay.getUTCDate() + 1);
+    nextDay.setUTCHours(0, 0, 0, 0);
+
+    const diff = nextDay - now;
+
+    // Convert milliseconds to hours, minutes, seconds
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Format with leading zeros
+
+    if (countdown) {
+        // Update the display
+        countdown.textContent = String(hours).padStart(2, '0') + ":" +
+            String(minutes).padStart(2, '0') + ":" +
+            String(seconds).padStart(2, '0');
+    }
+}
+
+// Update immediately and then every second
+updateCountdown();
+setInterval(updateCountdown, 1000);

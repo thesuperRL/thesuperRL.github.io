@@ -290,3 +290,7 @@ body.end-popup-open {
     display: flex;
     align-items: center;
 }
+
+.description {
+    margin-top: 15px;
+}
