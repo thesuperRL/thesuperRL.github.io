@@ -684,7 +684,18 @@ const SongDict = [
     },
 ];
 
+async function loadSongs() {
+    try {
+        const response = await fetch('songs.json');
+        SongDict = await response.json();
+        console.log('Data loaded:', SongDict);
+        // You can now use jsonData anywhere in your code
+    } catch (error) {
+        console.error('Error loading JSON:', error);
+    }
+}
 
+// loadSongs();
 let ArrGuesses = [];
 
 for (let i = 0; i < SongDict.length; i++) {
@@ -709,10 +720,14 @@ const wrongGuessSecondsReceived = [1, 2, 3, 4, 5]
 const wrongGuessSecondsCumulative = [1, 2, 4, 7, 11, 16, 16]
 
 // Current answer
-const TodayNumber = order[daysSinceStartDate()];
-const TodayAnswer = SongDict[TodayNumber]['answer'];
-const TodayURL = SongDict[TodayNumber]['url'];
-console.log(TodayAnswer);
+let Number = order[daysSinceStartDate()];
+let Answer = SongDict[Number]['answer'];
+let URL = SongDict[Number]['url'];
+console.log(Answer);
+let mode = "Daily";
+
+// popup
+let ucpopup;
 
 // countdown recording
 let countdown;
@@ -739,7 +754,7 @@ document.addEventListener('DOMContentLoaded', function () {
         iframe.style.position = 'absolute';
         iframe.style.visibility = 'hidden';
         iframe.allow = "encrypted-media; autoplay";
-        iframe.src = 'https://w.soundcloud.com/player/?url=' + TodayURL + '&auto_play=false&buying=false&liking=false&download=false&sharing=false&show_artwork=false&show_comments=false&show_playcount=false&show_user=false&hide_related=true&visual=false';
+        iframe.src = 'https://w.soundcloud.com/player/?url=' + URL + '&auto_play=false&buying=false&liking=false&download=false&sharing=false&show_artwork=false&show_comments=false&show_playcount=false&show_user=false&hide_related=true&visual=false';
         document.body.appendChild(iframe);
 
         player = SC.Widget(iframe);
@@ -893,10 +908,10 @@ function checkGuess(inputValue) {
     const guess = inputValue;
 
     // Check if the guess matches the ANSWER
-    if (guess === TodayAnswer) {
+    if (guess === Answer) {
         // Handle correct guess (you can add your logic here)
         console.log("Correct guess!");
-        const popup = createUnclosablePopup(`You got today's Project Sekai Heardle within ${wrongGuessSecondsCumulative[wrongGuesses.length]} second(s).`, {
+        ucpopup = createUnclosablePopup(`You got today's Project Sekai Heardle within ${wrongGuessSecondsCumulative[wrongGuesses.length]} second(s).`, {
             title: 'Correct guess!',
             backgroundColor: '#f8d7da',
             textColor: '#721c24',
@@ -908,7 +923,7 @@ function checkGuess(inputValue) {
         wrongGuesses.push(guess);
 
         // Set Guess Skip Number
-        if (wrongGuesses.length !== 5) {
+        if (wrongGuesses.length < 5) {
             skipBtn.textContent = "Skip (+" + wrongGuessSecondsReceived[wrongGuesses.length] + "s)";
         } else {
             skipBtn.textContent = "Skip";
@@ -1076,7 +1091,7 @@ function createUnclosablePopup(content, options = {}) {
     // Set the popup content
     popup.innerHTML = `
                 <h4 id="end-result"> ${config.title} </h4>
-                <p>The correct answer was "${TodayAnswer}"</p>
+                <p>The correct answer was "${Answer}"</p>
                 <p id="tries-used">${content}</p>
                 <button id="share-btn"> 
                     SHARE 
@@ -1087,6 +1102,9 @@ function createUnclosablePopup(content, options = {}) {
                 <div id="status"></div>
                 <p class="description">Time until the next song: </p>
                 <div class="countdown-display" id="countdown">23:59:59</div>
+                <button id="endless-btn"> 
+                    ENDLESS MODE 
+                </button>
             `;
 
     // Assign countdown
@@ -1122,6 +1140,41 @@ function createUnclosablePopup(content, options = {}) {
         } else {
             status.textContent = 'Failed to copy to clipboard.';
         }
+    });
+
+    document.getElementById('endless-btn').addEventListener('click', async () => {
+        Number = getRandomInt(0, 156);
+
+        Answer = SongDict[Number]['answer'];
+        URL = SongDict[Number]['url'];
+        console.log(Answer);
+
+        // clear wrong answers
+        wrongGuesses = [];
+        // Un-update HTML elements with wrong guesses
+        for (let i = 0; i < 6; i++) {
+            const element = document.getElementById(`guess${i + 1}`);
+            if (element) {
+                element.innerHTML = "<br>";
+                if (i !== 0){
+                    // unlight it
+                    element.classList.remove('col-sm-middle-guessed');
+                    element.classList.add('col-sm-middle');
+                }
+            }
+        }
+
+        // set mode to endless
+        mode = "Endless"
+
+        // reset skip btn content
+        skipBtn.textContent = "Skip (+" + wrongGuessSecondsReceived[wrongGuesses.length] + "s)"
+
+        // Close the popup
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+        document.body.classList.remove('unclosable-popup-open');
+        window.close = originalWindowClose;
     });
 
     // Disable all methods of closing
@@ -1162,6 +1215,12 @@ function createUnclosablePopup(content, options = {}) {
     };
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 // Function that generates the content to be copied
 function generateContent(isGuessed) {
     const date = new Date();
@@ -1172,7 +1231,7 @@ function generateContent(isGuessed) {
         day: 'numeric'
     });
 
-    return `Project Sekai Daily Heardle #${TodayNumber}, ${formattedDate}
+    return `Project Sekai ${mode} Heardle #${Number}, ${formattedDate}
 
 ${generateGuessNumbers(isGuessed)}`;
 }
