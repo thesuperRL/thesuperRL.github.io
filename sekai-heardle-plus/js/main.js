@@ -732,13 +732,12 @@ let ucpopup;
 // countdown recording
 let countdown;
 
-document.addEventListener('DOMContentLoaded', function () {
     const btnPlay = document.getElementById('btnPlay');
     const progressBar = document.getElementById('progressBar');
     const currentTimeDisplay = document.getElementById('currentTime');
     const durationDisplay = document.getElementById('duration');
 
-    let player;
+let player;
     let isPlaying = false;
     let playTimer;
     let progressInterval;
@@ -769,6 +768,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+document.addEventListener('DOMContentLoaded', function () {
     // Format seconds into MM:SS
     function formatTime(seconds) {
         const mins = Math.floor(seconds / 60);
@@ -1165,10 +1165,13 @@ function createUnclosablePopup(content, options = {}) {
         }
 
         // set mode to endless
-        mode = "Endless"
+        mode = "Endless";
 
         // reset skip btn content
-        skipBtn.textContent = "Skip (+" + wrongGuessSecondsReceived[wrongGuesses.length] + "s)"
+        skipBtn.textContent = "Skip (+" + wrongGuessSecondsReceived[wrongGuesses.length] + "s)";
+
+        // re-initialize the player
+        initPlayer();
 
         // Close the popup
         overlay.style.display = 'none';
