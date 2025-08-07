@@ -840,15 +840,24 @@ function isValidInput(input) {
 }
 
 function daysSinceStartDate() {
-    // Parse the STARTDATE string into a Date object
+    // Parse the STARTDATE string into a Date object in UTC
     const startDate = new Date(STARTDATE);
+    const startDateUTC = Date.UTC(
+        startDate.getUTCFullYear(),
+        startDate.getUTCMonth(),
+        startDate.getUTCDate()
+    );
 
-    // Get today's date (with time set to midnight for accurate comparison)
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    // Get current UTC date (with time set to midnight for accurate comparison)
+    const now = new Date();
+    const todayUTC = Date.UTC(
+        now.getUTCFullYear(),
+        now.getUTCMonth(),
+        now.getUTCDate()
+    );
 
     // Calculate the difference in milliseconds
-    const diffTime = today - startDate;
+    const diffTime = todayUTC - startDateUTC;
 
     // Convert milliseconds to days
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
