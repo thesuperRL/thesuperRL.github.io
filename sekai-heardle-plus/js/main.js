@@ -743,30 +743,30 @@ let player;
     let progressInterval;
     const maxDuration = 16; // Progress bar goes up to 16 seconds
 
-    // Initialize the player
-    function initPlayer() {
-        const iframe = document.createElement('iframe');
-        // Replace iframe.style.display = 'none' with:
-        iframe.style.width = '0';
-        iframe.style.height = '0';
-        iframe.style.border = 'none';
-        iframe.style.position = 'absolute';
-        iframe.style.visibility = 'hidden';
-        iframe.allow = "encrypted-media; autoplay";
-        iframe.src = 'https://w.soundcloud.com/player/?url=' + URL + '&auto_play=false&buying=false&liking=false&download=false&sharing=false&show_artwork=false&show_comments=false&show_playcount=false&show_user=false&hide_related=true&visual=false';
-        document.body.appendChild(iframe);
+// Initialize the player
+function initPlayer() {
+    const iframe = document.createElement('iframe');
+    // Replace iframe.style.display = 'none' with:
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = 'none';
+    iframe.style.position = 'absolute';
+    iframe.style.visibility = 'hidden';
+    iframe.allow = "encrypted-media; autoplay";
+    iframe.src = 'https://w.soundcloud.com/player/?url=' + URL + '&auto_play=false&buying=false&liking=false&download=false&sharing=false&show_artwork=false&show_comments=false&show_playcount=false&show_user=false&hide_related=true&visual=false';
+    document.body.appendChild(iframe);
 
-        player = SC.Widget(iframe);
+    player = SC.Widget(iframe);
 
-        player.bind(SC.Widget.Events.READY, function () {
-            console.log('Player is ready');
-            durationDisplay.textContent = '0:16';
-        });
+    player.bind(SC.Widget.Events.READY, function () {
+        console.log('Player is ready');
+        durationDisplay.textContent = '0:16';
+    });
 
-        player.bind(SC.Widget.Events.ERROR, function (error) {
-            console.log('Player error:', error);
-        });
-    }
+    player.bind(SC.Widget.Events.ERROR, function (error) {
+        console.log('Player error:', error);
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     // Format seconds into MM:SS
