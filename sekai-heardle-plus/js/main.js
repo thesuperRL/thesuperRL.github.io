@@ -1233,17 +1233,21 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function formatDateUTC(date) {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const utcYear = date.getUTCFullYear();
+    const utcMonth = months[date.getUTCMonth()]; // Get month name (e.g., "Aug")
+    const utcDay = date.getUTCDate();
+
+    return `${utcMonth} ${utcDay}, ${utcYear}`; // Example: "Aug 7, 2025"
+}
+
 // Function that generates the content to be copied
 function generateContent(isGuessed) {
     const date = new Date();
-    const formattedDate = date.toLocaleDateString('en-US', {
-        timeZone: 'UTC',  // Specify UTC timezone
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-    });
+    const formattedDate = formatDateUTC(date)
 
-    return `Project Sekai ${mode} Heardle #${Number}, ${formattedDate}
+    return `Project Sekai ${mode} Heardle #${Number}, ${formattedDate} (UTC)
 
 ${generateGuessNumbers(isGuessed)}`;
 }
