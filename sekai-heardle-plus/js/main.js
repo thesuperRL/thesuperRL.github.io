@@ -1,713 +1,24 @@
-const SongDict = [
-    {
-        url: "https://soundcloud.com/nyaliee/wah-wah-world-project-sekai-full-ver",
-        answer:
-            "Wah Wah World - Minori Hanasato, Kohane Azusawa, & Hatsune Miku (Giga, Mitchie M)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/happy-halloween-more-more-jump",
-        answer: "Happy Halloween - MORE MORE JUMP! & Rin Kagamine (Junky)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/reproduction-by-25-ji-night",
-        answer: "Saisei - 25ji, Night Cord de. & Rin Kagamine (Picon)",
-    },
-    {
-        url: "https://soundcloud.com/akkitoya/x",
-        answer:
-            "Aoiro Enogu - Shiho Hinomori, Shizuku Hinomori, & Hatsune Miku (Kujira)",
-    },
-    {
-        url: "https://soundcloud.com/malleusdraconia/project-sekai-759012722",
-        answer: "From Tokyo - Leo/Need & Hatsune Miku (Natsushiro Takaaki)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/nonsense-bungaku-wonderlands-x",
-        answer:
-            "Nonsense Bungaku - Rui Kamishiro, Tsukasa Tenma, & Len Kagamine (Eve, Numa)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/identity-by-kanade-miku",
-        answer: "Identity - Kanade Yoisaki & Hatsune Miku (Kanaria)",
-    },
-    {
-        url: "https://soundcloud.com/kanon-matsubara/full-glory-steady-go",
-        answer:
-            "Glory Steady Go! - Wonderlands x Showtime & Luka Megurine (kinoshita)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/usseewa-by-25-ji-night-code-de",
-        answer: "Usseewa - Mafuyu Asahina & Mizuki Akiyama (syudou)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/mirai-vivid-bad-squadx-ver",
-        answer: "Mirai - Vivid BAD SQUAD & Luka Megurine (Yuukisan)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/vivid-bad-squad",
-        answer: "Fragile - Akito Shinonome & Toya Aoyagi (nulut)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/worldwide-wander-more-more-jump",
-        answer: "Worldwide Wander - MORE MORE JUMP! & KAITO (TOKOTOKO)",
-    },
-    {
-        url: "https://soundcloud.com/user-131851100-512460064/feat-tenma-tsukasa-otori-emu-kusanagi-nene-kamishiro",
-        answer:
-            "Once Upon A Dream - Wonderlands x Showtime & Len Kagamine (YASUHIRO)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/earths-last-confession-more",
-        answer:
-            "Chikyuu Saigo no Kokuhaku o - Shizuku Hinomori, Haruka Kiritani, & Luka Megurine (kemu)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-time-machine-by-leoneed",
-        answer:
-            "Time Machine - Ichika Hoshino, Saki Tenma, & Hatsune Miku (1640mP)",
-    },
-    {
-        url: "https://soundcloud.com/user-791357167/full-telecaster-b-boy-by-wonderlands-x-showtime",
-        answer:
-            "Telecaster B-Boy - Wonderlands x Showtime & Len Kagamine (Surii/Three)",
-    },
-    {
-        url: "https://soundcloud.com/rini-tsukimi/run-into-the-blue",
-        answer: "Aoku Kakero! - Ichika Hoshino & Hatsune Miku (marasy)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/cinema-vivid-bad-squad",
-        answer: "Cinema - Vivid BAD SQUAD & KAITO (Ayase)",
-    },
-    {
-        url: "https://soundcloud.com/nathorix3/25a",
-        answer:
-            "Inochi ni Kirawarete Iru. - Kanade Yoisaki & Hatsune Miku (Kanzaki Iori)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/1-2-fanclub-wonderlands-x-showtime",
-        answer: "Yī Èr Fanclub - Wonderlands x Showtime & Rin Kagamine (MikitoP)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-keitai-renwa-by-25-ji",
-        answer:
-            "Keitai Renwa - Ena Shinonome, Mizuki Akiyama, & Hatsune Miku (Mafumafu)",
-    },
-    {
-        url: "https://soundcloud.com/user-479070985/hoshino-ichika-tenma-tsukasa",
-        answer:
-            "Sekai - Ichika Hoshino, Tsukasa Tenma, Kanade Yoisaki, & Hatsune Miku (DECO*27, kemu, Rockwell)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/aishite-aishite-aishite-by-25",
-        answer:
-            "Aishite Aishite Aishite - Mafuyu Asahina, Ena Shinonome, & Hatsune Miku (Kikuo)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/stage-of-sekai-leoneed",
-        answer: "STAGE OF SEKAI - Leo/Need & Len Kagamine (HarryP)",
-    },
-    {
-        url: "https://soundcloud.com/alayna-michelle-639001855/echo-vivid-bad-squad",
-        answer: "ECHO - Vivid BAD SQUAD & Luka Megurine (Crusher-P)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-cutlery-by-25-ji",
-        answer:
-            "Cutlery - Kanade Yoisaki, Mafuyu Asahina, & Hatsune Miku (Yuukisan)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/odo-by-vivid-bad-squad",
-        answer: "Odo - An Shiraishi & Kohane Azusawa (Giga, TeddyLoid, DECO*27)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-romeo-and-cinderella-by",
-        answer:
-            "Romeo to Cinderella - Shizuku Hinomori, Airi Momoi, & Hatsune Miku (doriko)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/full-ver-leo-needx",
-        answer:
-            "Roku-chou Nen to Ichiy Monogatari - Ichika Hoshino & Hatsune Miku (kemu)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/x-game-ver",
-        answer: "TONDEMO-WONDERZ - Wonderlands x Showtime & KAITO (sasakure.UK)",
-    },
-    {
-        url: "https://soundcloud.com/enashinonome/1sh1adsvxjxw",
-        answer: "Jackpot Sad Girl - 25ji, Nightcord de. & Hatsune Miku (syudou)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/bokuramada-underground-leo",
-        answer:
-            "Bokura Mada Underground - Ichika Hoshino, Shiho Hinomori, & Hatsune Miku (Eve, Numa)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-patchwork-staccato-by",
-        answer:
-            "Tsugihagi Staccato - Shizuku Hinomori, Airi Momoi, & Hatsune Miku (Toa)",
-    },
-    {
-        url: "https://soundcloud.com/user-791357167/full-your-adventure-log-has-vanished-by-wonderlands-x-showtime",
-        answer:
-            "Bouken no Sho ga Kiemashita! - Tsukasa Tenma, Emu Otori, Rin Kagamine, & Len Kagamine (JesusP)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/achjnqfq6lkr",
-        answer:
-            "Umiyuri Kaiteitan - Ichika Hoshino, Honami Mochizuki, & Hatsune Miku (n-buna)",
-    },
-    {
-        url: "https://soundcloud.com/nathorix3/by-vivid-bad-squad-pomp-and-circumstance-project-sekai-colorful-stage-ver",
-        answer: "Ifuudoudou - Akito Shinonome, Toya Aoyagi, & KAITO (Umetora)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-hello-how-are-you-by-25",
-        answer:
-            "Hello/How Are You - Ena Shinonome, Mafuyu Asahina, & Hatsune Miku (nanou)",
-    },
-    {
-        url: "https://soundcloud.com/kureibee/chururira-wxs",
-        answer: "Chururira Chururira Daddadda! - Wonderlands x Showtime (KurageP)",
-    },
-    {
-        url: "https://soundcloud.com/dariusmht/cosmospice-saki-tenma-tsukasa",
-        answer:
-            "Cosmospice - Saki Tenma, Tsukasa Tenma, & Hatsune Miku (PinocchioP)",
-    },
-    {
-        url: "https://soundcloud.com/shinjue/bring-it-on",
-        answer:
-            "Rettou Joutou - An Shiraishi, Kohane Azusawa, Rin Kagamine & Len Kagamine (Giga, Reol)",
-    },
-    {
-        url: "https://soundcloud.com/kureibee/full-yoru-ni-kakeru-25-25-ji",
-        answer: "Yoru ni Kakeru - Yoisaki Kanade & Hatsune Miku (Ayase)",
-    },
-    {
-        url: "https://soundcloud.com/user-846651503/full-nostalogic-more-more-jump",
-        answer: "Nostalogic - Haruka Kiritani, Shizuku Hinomori, & MEIKO (yuukiss)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/positive-dance-time",
-        answer:
-            "Positive☆Dance Time - Emu Otori, Nene Kusanagi, & Rin Kagamine (Kinoshita)",
-    },
-    {
-        url: "https://soundcloud.com/kureibee/id-smile-25-ji-full",
-        answer: "IDSMILE - 25ji, Nightcord de. & MEIKO (Toa)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-roki-by-leo-need",
-        answer: "Roki - Ichika Hoshino & Hatsune Miku (MikitoP)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-viva-happy-by-more-more",
-        answer: "Viva Happy - MORE MORE JUMP! & Hatsune Miku (Mitchie M)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/vivid-bad-squadx-ver-1",
-        answer: "Alter Ego - Vivid BAD SQUAD & Hatsune Miku (Misumi)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-hitobito-envy-by-25-ji",
-        answer:
-            "Hitorinbo Envy - Kanade Yoisaki, Mizuki Akiyama, & Hatsune Miku (koyori)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/remote-control-wonderlands-x",
-        answer:
-            "Remote Control - Emu Otori, Nene Kusanagi, Rin Kagamine, & Len Kagamine (WONDERFUL☆OPPORTUNITY!)",
-    },
-    {
-        url: "https://soundcloud.com/user-819841158/tokugawa-cup-noodle-ban-nene-kusanagi-nene-robo-x-mikudayo-kagamine-len-kaito",
-        answer:
-            "Tokugawa Cup Noodle Kinshirei - Nene Kusanagi, NeneRobo, Mikudayo, KAITO, Rin Kagamine, Len Kagamine, Luka Megurine, & MEIKO (Mitchie M)",
-    },
-    {
-        url: "https://soundcloud.com/user-131851100-512460064/mp3fy-leo-need-0822-color-coded-lyricskan-rom-eng",
-        answer:
-            "Shinpakusuu#0822 - Ichika Hoshino, Honami Mochizuki, & Hatsune Miku (papiyon)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/x-full-ver",
-        answer: "Sweet Magic - Wonderlands x Showtime & Rin Kagamine (Junky)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/villain-25ji-night-code-de",
-        answer: "Villain - Mafuyu Asahina & Mizuki Akiyama (Teniwoha)",
-    },
-    {
-        url: "https://soundcloud.com/a-single-river/jin-yobanashi-deceive-night",
-        answer:
-            "Yobanashi Deceive - Akito Shinonome, Toya Aoyagi, & Len Kagamine (Jin)",
-    },
-    {
-        url: "https://soundcloud.com/noemurr/tenshi-no-clover-more-more",
-        answer: "Tenshi no Clover - MORE MORE JUMP! & Rin Kagamine (DIVELA)",
-    },
-    {
-        url: "https://soundcloud.com/vividbad/from-y-to-y-leoneed",
-        answer: "from Y to Y - Leo/Need & Hatsune Miku (JimmyThumbP)",
-    },
-    {
-        url: "https://soundcloud.com/user-540106876/rad-dogs-feat-azusawa-kohane",
-        answer: "RAD DOGS - Vivid BAD SQUAD & Hatsune Miku (HachiojiP, q*Left)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/darling-dance-more-more-jump",
-        answer:
-            "Darling Dance - Minori Hanasato, Haruka Kiritani, & Hatsune Miku (Kairiki Bear)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/ray-leo-need",
-        answer: "ray - Ichika Hoshino & Hatsune Miku (Fujiwara Motoo)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-charles-by-25-ji",
-        answer: "Charles - Ena Shinonome & Mizuki Akiyama (balloon)",
-    },
-    {
-        url: "https://soundcloud.com/ezkatze/drop-pop-candy-vivid-bad-squad-project-sekai",
-        answer:
-            "drop pop candy - An Shiraishi, Azusawa Kohane, Rin Kagamine, & Luka Megurine (Giga, Reol)",
-    },
-    {
-        url: "https://soundcloud.com/user-791357167/full-buriki-no-dance-by-wonderlands-x-showtime",
-        answer:
-            "Buriki no Dance - Rui Kamishiro, Tsukasa Tenma, & Len Kagamine (Hinata Electric Works)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/ice-drop-more-more-jump",
-        answer: "Ice Drop - MORE MORE JUMP! & Len Kagamine (aqu3ra)",
-    },
-    {
-        url: "https://soundcloud.com/miho-814328870/asagao-no-chiru-koro-ni-leo",
-        answer:
-            "Asagao no Chiru Koro ni - Ichika Hoshino, Honami Mochizuki, & Hatsune Miku (Pusu (from TUYU))",
-    },
-    {
-        url: "https://soundcloud.com/malleusdraconia/project-sekai-672322074",
-        answer: "Yuurei Tokyo - Akito Shinonome, Toya Aoyagi, & KAITO (Ayase)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-miracle-painting-by",
-        answer:
-            "Miracle Paint - Wonderlands x Showtime & Hatsune Miku (OSTER Project)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/forward-full-ver-vivid-bad",
-        answer: "Forward - Vivid BAD SQUAD & Hatsune Miku (R Sound Design)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/heart-forecast-more-more-jump",
-        answer:
-            "Kokoroyohou - MORE MORE JUMP! & Hatsune Miku (Eve, TAKU INOUE, Numa)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/peaky-peaky-leo-need",
-        answer: "Peaky Peaky - Leo/Need & KAITO (MikitoP)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/rain-and-petra-vivid-bad-squad",
-        answer:
-            "Ame to Petra - Akito Shinonome, Toya Aoyagi, & Len Kagamine (balloon)",
-    },
-    {
-        url: "https://soundcloud.com/devilcrows/wonderlands-x-showtime-dance-robot-dance",
-        answer:
-            "Dance Robot Dance - Emu Otori, Nene Kusanagi, & Hatsune Miku (NayutalieN)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-milk-crown-on-sonnetica",
-        answer:
-            "Milk Crown on Sonnetica - Shizuku Hinomori, Minori Hanasato, & Hatsune Miku (Yujii)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/king-wonderlands-x-showtime-rui-kamishiro-and-tsukasa-tenma-duet",
-        answer: "KING - Rui Kamishiro & Tsukasa Tenma (Kanaria)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/teo-by-leo-need",
-        answer: "Teo - Ichika Hoshino & Hatsune Miku (Omoi, Sakurai)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/smilesurvey-team-theme-wonderlands-x-showtime",
-        answer:
-            "Niccori^^Chōsatai no Theme - Wonderlands x Showtime & Hatsune Miku (WONDERFUL☆OPPORTUNITY!)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/more-more-jumpx-full-ver",
-        answer: "More! Jump! More! - MORE MORE JUMP! & Hatsune Miku (NayutalieN)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/childrens-record-vivid-bad-squad",
-        answer: "Children Record - Vivid BAD SQUAD & Len Kagamine (Jin)",
-    },
-    {
-        url: "https://soundcloud.com/user-791357167/full-fixer-wonderlands-x-showtime",
-        answer: "Fixer - Rui Kamishiro & Tsukasa Tenma (nulut)",
-    },
-    {
-        url: "https://soundcloud.com/user-840687078/full-gunjo-sanka-project-sekai",
-        answer:
-            "Gunjou Sanka - Ichika Hoshino, Minori Hanasato, Kohane Azusawa, Tsukasa Tenma, Kanade Yoisaki, & Hatsune Miku (Eve, Numa)",
-    },
-    {
-        url: "https://soundcloud.com/dk-station/bocca-della-verita",
-        answer:
-            "Bocca Della Verità - Mafuyu Asahina & Mizuki Akiyama (Hiiragi Kirai)",
-    },
-    {
-        url: "https://soundcloud.com/jennie-797976278/salamander-project-sekai-akito-shinonome-ena-shinonome-hatsune-miku",
-        answer:
-            "Salamander - Akito Shinonome, Ena Shinonome, & Hatsune Miku (DECO*27)",
-    },
-    {
-        url: "https://soundcloud.com/user-791357167/full-as-you-like-it-by-wonderlands-x-showtime",
-        answer: "Oki ni Mesu mama - Wonderlands x Showtime & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/moonlight-vivid-bad-squad",
-        answer: "Moonlight - Vivid BAD SQUAD & MEIKO",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/full-ver-x-x",
-        answer:
-            "Sekai wa Mada Hajimatte sura Inai - Wonderlands x Showtime & Hatsune Miku (PinocchioP)",
-    },
-    {
-        url: "https://soundcloud.com/sh-hnmr-hgf69/full-metamo-reborn-more-more-jump-x-rin-kagamine",
-        answer: "Metamo Re:born - MORE MORE JUMP! & Rin Kagamine (emon(Tes.))",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/88-wonderlands-x-showtime",
-        answer: "88☆彡 - Wonderlands x Showtime & KAITO (marasy, kemu)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-hibana-by-leo-need",
-        answer:
-            "Hibana -Reloaded- - Ichika Hoshino & Hatsune Miku (DECO*27, Rockwell)",
-    },
-    {
-        url: "https://soundcloud.com/user-131851100-512460064/ready-steady-vivid-bad-squad-hatsune-miku",
-        answer: "Ready Steady - Vivid BAD SQUAD & Hatsune Miku (Giga, q*Left)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-totemo-itai-itagaritai-by",
-        answer:
-            "Totemo Itai Itagaritai - Mafuyu Asahina, Ena Shinonome, & Hatsune Miku (EZFG)",
-    },
-    {
-        url: "https://soundcloud.com/ezesoaigmywo/full-just-be-friends-feat",
-        answer:
-            "Just Be Friends - An Shiraishi, Kohane Azusawa, & Luka Megurine (Dixie Flatline)",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/flyer-vivid-bad-squad",
-        answer: "Flyer! - Vivid BAD SQUAD & Len Kagamine (Chinozo)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/karakuri-pierrot-by-more-more",
-        answer: "Karakuri Pierrot - MORE MORE JUMP! & Hatsune Miku (40meterP)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/infinitely-gray-25-ver",
-        answer:
-            "Kagirinaku Haiiro e - 25ji, Nightcord de. & Rin Kagamine (Surii/Three)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/devils-manner-vivid-bad-squad",
-        answer:
-            "Akuma no Odorikata - Vivid BAD SQUAD & Len Kagamine (Tatsuya Kitani)",
-    },
-    {
-        url: "https://soundcloud.com/malleusdraconia/project-sekai-colorful-stage-happy-synthesizer-more-more-jump",
-        answer: "Happy Synthesizer! - MORE MORE JUMP! & Hatsune Miku (EasyPop)",
-    },
-    {
-        url: "https://soundcloud.com/spicy-san-thepuppet/dreamin-chuchu-more-more-jump",
-        answer: "Dreamin Chuchu - MORE MORE JUMP! & Hatsune Miku (emon(Tes.))",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/1-leo-need-x",
-        answer: "「１」- Leo/Need & Luka Megurine (164)",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-jishou-mushoku-by-25-ji-night-code-de",
-        answer:
-            "Jishou Mushoku - Kanade Yoisaki, Mafuyu Asahina, & Hatsune Miku (Sasanomaly)",
-    },
-    {
-        url: "https://soundcloud.com/shirosami/if-more-more-jump",
-        answer: "If - MORE MORE JUMP! & Hatsune Miku (YurryCanon, Tsukuyomi)",
-    },
-    {
-        url: "https://soundcloud.com/mizuena/garando-airhead-vivid-bad-squad-akito-shinonome-aoyagi-touya-kagamine-len",
-        answer: "Garando - Akito Shinonome, Toya Aoyagi, & Len Kagamine (Picon)",
-    },
-    {
-        url: "https://soundcloud.com/komi-shoko/kuyamu-to-kaite-mirai-25-ji-nightcord-de-color-coded-kan-rom-eng-lyrics-project-sekai-128-kbps",
-        answer:
-            "Kuyamu to Kaite Mirai - 25ji, Nightcord de. & Hatsune Miku (mafumafu)",
-    },
-    {
-        url: "https://soundcloud.com/mizuena/ghost-rule-leoneed-hoshino-ichika-hatsune-miku",
-        answer: "Ghost Rule - Ichika Hoshino & Hatsune Miku (DECO*27)",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/palll-sensation-vivid-bad",
-        answer:
-            "PaIII. Sensation - An Shiraishi, Kohane Azusawa, Rin Kagamine, & Hatsune Miku (Yunosuke, Gyuuniku)",
-    },
-    {
-        url: "https://soundcloud.com/user-791357167/full-dappou-rock-by-wonderlands-x-showtime",
-        answer: "Dappou Rock - Rui Kamishiro, Tsukasa Tenma, & Len Kagamine (Neru)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/ai-no-material-more-more",
-        answer: "Ai no Material - MORE MORE JUMP! & MEIKO (Junky)",
-    },
-    {
-        url: "https://soundcloud.com/ichinose_rim_jp/ver-4",
-        answer: "Asu no Yozora Shoukaihan - Ichika Hoshino (Orangestar)",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/potato",
-        answer:
-            "potato ni Natte iku - Wonderlands x Showtime & Hatsune Miku (Neru)",
-    },
-    {
-        url: "https://soundcloud.com/user-960341772/lower-25ji",
-        answer: "Lower - 25ji, Nightcord de. & MEIKO (nulut)",
-    },
-    {
-        url: "https://soundcloud.com/user-131851100-512460064/hoshino-ichika-hatsune-miku-dramaturgy",
-        answer: "Dramaturgy - Ichika Hoshino & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/mxnochrxme/mkdr-dscf-kanaena",
-        answer:
-            "Mousou Kanshou Daishou Renmei - Kanade Yoisaki, Ena Shinonome, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/shoujorei-more-more-jump",
-        answer: "Shoujorei - Shizuku Hinomori, Haruka Kiritani, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/a-single-river/jin-stella-leo-need-x-miku",
-        answer: "Stella - Leo/Need & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/hello-world-leo-need-full",
-        answer: "Hello, world! - Leo/Need & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/nomad-25ji-night-code-de",
-        answer: "Nomad - 25ji, Nightcord de. & Rin Kagamine (balloon)",
-    },
-    {
-        url: "https://soundcloud.com/user-846651503/full-near-more-more-jump",
-        answer: "Near - Haruka Kiritani, Minori Hanasato, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/user-131851100-512460064/vivid-bad-squad-beat-eater",
-        answer: "Beat Eater - Vivid BAD SQUAD & Len Kagamine",
-    },
-    {
-        url: "https://soundcloud.com/user-131851100-512460064/more-more-jump-newly-edgy-idols",
-        answer: "Idol Shin'eitai - MORE MORE JUMP! & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/made-to-order-leoneed",
-        answer: "Made-to-Order - Leo/Need & Luka Megurine",
-    },
-    {
-        url: "https://soundcloud.com/user-761980745/full-tricologe-25ji-nightcord",
-        answer: "Tricologe - 25ji, Nightcord de. & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/user-950485560/full-ver-leo-need-ikanaide-dont-go",
-        answer: "Ikanaide - Ichika Hoshino, Saki Tenma, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/kureibee/otome-dissection-25-ji",
-        answer: "Otome Kaibou - Mafuyu Asahina, Mizuki Akiyama, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-venom-by-25-ji-nightcord",
-        answer: "Venom - Ena Shinonome & Mizuki Akiyama",
-    },
-    {
-        url: "https://soundcloud.com/user-131851100-512460064/mp3fy-ryuusei-no-pulse-leo-need-lyrics",
-        answer: "Ryuusei no Pulse - Leo/Need & MEIKO",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/vivid-bad-squadx",
-        answer: "Traffic Jam - Vivid BAD SQUAD & Rin Kagamine",
-    },
-    {
-        url: "https://soundcloud.com/rini-tsukimi/needle-leo-need",
-        answer: "needLe - Leo/Need & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/emaleth-farias/at-gods-mercy-wonderlands-x",
-        answer: "Kami no Manimani - Wonderlands x Showtime & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/choci-mocha/love-trial-more-more-jump",
-        answer: "Renai Saiban - Airi Momoi, Minori Hanasato, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/user-791357167/full-nijiiro-stories-by-wonderlands-x-showtime",
-        answer: "Nijiro Stories - Nene Kusanagi, Rui Kamishiro, MEIKO, & KAITO",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-melty-land-nightmare-by",
-        answer: "Melty Land Nightmare - MORE MORE JUMP! & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/user-34705655/hare-wo-matsu-leo-need",
-        answer: "Hare Wo Matsu - Leo/Need & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/kanade-tomosu-sora-25ji-night-code-de",
-        answer: "Kanade Tomosu Sora - 25ji, Nightcord de. & Luka Megurine",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-bitter-choco-decoration",
-        answer: "Bitter Choco Decoration - 25ji, Nightcord de. & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/hikaru-uwu/telecaster-b-boy-wonderlands-x",
-        answer:
-            "Lost One no Goukoku - Ichika Hoshino, Shiho Hinomori, & Rin Kagamine",
-    },
-    {
-        url: "https://soundcloud.com/chirpss/kagerou-daze-leoneed-cover",
-        answer: "Kagerou Daze - Leo/Need & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/ldq5kidtnspc/show-time-ruler-x-x",
-        answer: "Showtime Ruler - Wonderlands x Showtime & Kagamine Rin",
-    },
-    {
-        url: "https://soundcloud.com/clicky1/full-marshmary-by-more-more",
-        answer: "Marshmary - Airi Momoi, Minori Hanasato, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/ichinose_rim_jp/ver-3",
-        answer: "Doctor=Funk Beat - Akito Shinonome, Toya Aoyagi, & KAITO",
-    },
-    {
-        url: "https://soundcloud.com/nlebjysavndf/journey-project-sekai",
-        answer:
-            "Journey - Hoshino Ichika, Hanasato Minori, Azusawa Kohane, Tenma Tsukasa, Yoisaki Kanade, & Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/hatsunesouhmiku/tell-your-world",
-        answer: "Tell Your World - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/andreievich-rosse/next-nest",
-        answer: "Next Nest - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/yuminightcore2/39-music",
-        answer: "39 Music! - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/user-901332093/greenlights-serenade",
-        answer: "Greenlights Serenade - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/tansauwei/hatsune-miku-world-is-mine",
-        answer: "World is Mine - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/tsukune-aono/hatsune-miku-no-shoushitsu",
-        answer: "Hatsune Miku no Shoushitsu - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/naomi-jalloh/blessing-halyosy-ft-hatsune",
-        answer:
-            "Blessing - Hatsune Miku, Kagamine Rin, Kagamine Len, Megurine Luka, MEIKO, & KAITO",
-    },
-    {
-        url: "https://soundcloud.com/vocaloid_fangirl/hatsune-miku-kagamine-rin-gimmexgimme-vocaloid-original-by-p-giga",
-        answer: "Gimme X Gimme - Hatsune Miku & Kagamine Rin",
-    },
-    {
-        url: "https://soundcloud.com/rw486/leia-remind",
-        answer: "Leia -Remind - Megurine Luka",
-    },
-    {
-        url: "https://soundcloud.com/tomkayepika2/rollin-girlhttps://soundcloud.com/tomkayepika2/rollin-girl",
-        answer: "Rollin Girl - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/a-single-river/dareka-no-shinzou-ni-nareta",
-        answer: "Dareka no Shinzou ni Nareta Nara - GUMI",
-    },
-    {
-        url: "https://soundcloud.com/anamanaguchi/miku",
-        answer: "Miku - Hatsune Miku (Anamanaguchi)",
-    },
-    {
-        url: "https://soundcloud.com/user-449328678/soudatta",
-        answer: "Sou Datta!! - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/lelka18/sick-of-house-feat-kagaminehttps://soundcloud.com/lelka18/sick-of-house-feat-kagamine",
-        answer: "Sick of House! - Kagamine Len, Kagamine Rin",
-    },
-    {
-        url: "https://soundcloud.com/afiroz/aku-no-musume",
-        answer: "Aku no Musume - Kagamine Rin",
-    },
-    {
-        url: "https://soundcloud.com/afiroz/aku-no-meshitsukai",
-        answer: "Aku no Meshitsukai - Kagamine Len",
-    },
-    {
-        url: "https://soundcloud.com/h_a_n_a/official-from-cosmop-feat",
-        answer: "MACHINEGUN POEM DOLL - Hatsune Miku",
-    },
-    {
-        url: "https://soundcloud.com/ritsukogas/full-hitsuji-ga-ippiki-vivid",
-        answer: "Hitsuji ga Ippiki - Vivid BAD SQUAD",
-    },
-    {
-        url: "https://soundcloud.com/josie-533760370/25-ji-nightcord-de-i-i-nandesu",
-        answer: "I Nandesu - 25ji, Nightcord de. & Hatsune Miku",
-    },
-];
-
-async function loadSongs() {
+async function loadData() {
     try {
-        const response = await fetch('songs.json');
-        SongDict = await response.json();
-        console.log('Data loaded:', SongDict);
-        // You can now use jsonData anywhere in your code
+        const response = await fetch('songs/concat_songs_non_VS.json'); // Pauses here until fetch completes
+        const data = await response.json();       // Pauses again for JSON parsing
+        console.log("Data loaded:", data);
+
+        // ✅ Now you can safely use `data` here
+        return data
     } catch (error) {
-        console.error('Error loading JSON:', error);
+        console.error("Failed to load JSON:", error);
     }
 }
 
-// loadSongs();
+let SongDict;
 let ArrGuesses = [];
 
-for (let i = 0; i < SongDict.length; i++) {
-    ArrGuesses.push(SongDict[i]["answer"]);
-}
-
-console.log(SongDict.length);
-console.log(ArrGuesses);
-
-const order = [114, 132, 69, 156, 113, 121, 55, 146, 72, 138, 90, 144, 77, 139, 63, 25, 101, 38, 10, 153, 104, 148, 133, 102, 68, 100, 115, 135, 123, 18, 105, 98, 118, 42, 32, 87, 125, 130, 117, 83, 89, 78, 27, 74, 76, 119, 6, 155, 106, 21, 60, 49, 151, 3, 13, 79, 73, 29, 16, 8, 41, 17, 154, 53, 30, 5, 33, 65, 85, 147, 56, 14, 97, 93, 111, 99, 71, 59, 2, 143, 109, 134, 34, 46, 1, 80, 57, 61, 23, 52, 19, 110, 81, 86, 51, 22, 88, 7, 142, 9, 122, 4, 58, 107, 75, 35, 92, 24, 145, 141, 54, 140, 40, 136, 103, 126, 128, 48, 15, 137, 28, 116, 131, 36, 37, 50, 91, 43, 67, 66, 84, 82, 20, 129, 112, 124, 11, 0, 70, 127, 149, 45, 62, 120, 31, 64, 108, 39, 47, 152, 44, 12, 95, 94, 150, 96, 26];
+const order = [145, 192, 9, 112, 98, 328, 210, 316, 160, 200, 295, 375, 298, 23, 317, 228, 162, 333, 75, 390, 4, 242, 330, 281, 190, 346, 279, 231, 154, 172, 18, 186, 226, 134, 363, 120, 15, 68, 81, 287, 351, 188, 33, 48, 246, 111, 404, 272, 181, 116, 241, 62, 90, 126, 319, 326, 16, 347, 236, 388, 108, 114, 371, 63, 310, 359, 392, 321, 255, 60, 19, 96, 194, 143, 140, 193, 196, 256, 136, 12, 178, 305, 209, 381, 32, 275, 2, 400, 185, 72, 224, 268, 55, 258, 69, 182, 1, 247, 325, 73, 117, 267, 45, 357, 204, 30, 260, 79, 345, 65, 269, 132, 306, 164, 215, 213, 28, 74, 257, 212, 201, 235, 252, 129, 189, 52, 389, 262, 332, 244, 156, 34, 406, 361, 386, 411, 10, 219, 158, 264, 384, 93, 77, 349, 322, 94, 280, 205, 365, 277, 285, 175, 67, 197, 320, 41, 214, 238, 176, 261, 85, 167, 26, 40, 245, 110, 165, 153, 339, 399, 157, 270, 20, 353, 291, 369, 104, 372, 393, 102, 184, 344, 61, 315, 133, 155, 380, 151, 179, 311, 340, 397, 44, 163, 170, 409, 218, 31, 253, 91, 229, 59, 341, 195, 334, 83, 169, 259, 101, 47, 412, 146, 342, 202, 329, 119, 254, 379, 71, 17, 168, 354, 174, 57, 410, 147, 314, 87, 89, 53, 177, 187, 138, 266, 8, 398, 171, 128, 121, 54, 217, 323, 159, 113, 82, 271, 206, 36, 58, 237, 294, 370, 122, 337, 352, 336, 300, 118, 243, 29, 22, 308, 24, 208, 106, 27, 76, 276, 109, 297, 373, 265, 402, 152, 99, 95, 80, 191, 173, 3, 37, 383, 39, 331, 360, 66, 293, 309, 141, 38, 216, 239, 64, 225, 303, 86, 292, 150, 124, 198, 251, 395, 137, 97, 278, 5, 289, 107, 240, 103, 13, 115, 46, 367, 100, 248, 21, 307, 199, 296, 43, 376, 301, 25, 180, 92, 408, 232, 230, 125, 401, 385, 250, 51, 396, 130, 161, 407, 249, 144, 11, 207, 7, 377, 84, 127, 220, 284, 313, 166, 148, 283, 382, 387, 343, 368, 223, 364, 378, 302, 350, 405, 391, 203, 394, 290, 324, 123, 348, 221, 356, 286, 299, 263, 211, 142, 222, 374, 131, 403, 273, 139, 362, 183, 149, 312, 355, 78, 358, 304, 35, 42, 233, 327, 338, 282, 234, 105, 227, 50, 366, 14, 288, 49, 6, 318, 335, 274, 70, 56, 88, 135, 0]
 
 const STARTDATE = "2025-08-04";
+
+const OFFSET = 3;
 
 const searchInput = document.getElementById('search-input');
 const suggestionsContainer = document.getElementById('suggestions');
@@ -721,9 +32,8 @@ const wrongGuessSecondsCumulative = [1, 2, 4, 7, 11, 16, 16]
 
 // Current answer
 let Number = order[daysSinceStartDate()];
-let Answer = SongDict[Number]['answer'];
-let URL = SongDict[Number]['url'];
-console.log(Answer);
+let Answer;
+let URL;
 let mode = "Daily";
 
 // popup
@@ -732,16 +42,16 @@ let ucpopup;
 // countdown recording
 let countdown;
 
-    const btnPlay = document.getElementById('btnPlay');
-    const progressBar = document.getElementById('progressBar');
-    const currentTimeDisplay = document.getElementById('currentTime');
-    const durationDisplay = document.getElementById('duration');
+const btnPlay = document.getElementById('btnPlay');
+const progressBar = document.getElementById('progressBar');
+const currentTimeDisplay = document.getElementById('currentTime');
+const durationDisplay = document.getElementById('duration');
 
 let player;
-    let isPlaying = false;
-    let playTimer;
-    let progressInterval;
-    const maxDuration = 16; // Progress bar goes up to 16 seconds
+let isPlaying = false;
+let playTimer;
+let progressInterval;
+const maxDuration = 16; // Progress bar goes up to 16 seconds
 
 // Initialize the player
 function initPlayer() {
@@ -768,7 +78,7 @@ function initPlayer() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     // Format seconds into MM:SS
     function formatTime(seconds) {
         const mins = Math.floor(seconds / 60);
@@ -778,32 +88,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update progress bar
     function updateProgress(currentTime) {
-        const progressPercent = ((currentTime - 3) / maxDuration) * 100;
+        const progressPercent = ((currentTime - OFFSET) / maxDuration) * 100;
         progressBar.style.width = `${progressPercent}%`;
-        currentTimeDisplay.textContent = formatTime(currentTime - 3);
+        currentTimeDisplay.textContent = formatTime(currentTime - OFFSET);
     }
 
-    // Play the first 3 seconds
+    // Play the first OFFSET seconds
     function playFirstFewSeconds() {
-        player.seekTo(3);
+        player.seekTo(OFFSET * 1000);
         player.play();
         isPlaying = true;
         btnPlay.innerHTML = '&#10074;&#10074;';
 
-        let currentTime = 3;
+        let currentTime = OFFSET;
         updateProgress(currentTime);
 
         progressInterval = setInterval(() => {
             currentTime += 0.1;
             updateProgress(currentTime);
 
-            if (currentTime - 3 >= wrongGuessSecondsCumulative[wrongGuesses.length]) {
+            if (currentTime - OFFSET >= wrongGuessSecondsCumulative[wrongGuesses.length]) {
                 stopPlayback();
             }
         }, 100);
 
-        // Stop after 3 seconds
-        playTimer = setTimeout(stopPlayback, (wrongGuessSecondsCumulative[wrongGuesses.length] + 3) * 1000);
+        // Stop after OFFSET seconds
+        playTimer = setTimeout(stopPlayback, (wrongGuessSecondsCumulative[wrongGuesses.length] + OFFSET) * 1000);
     }
 
     // Stop playback
@@ -827,6 +137,29 @@ document.addEventListener('DOMContentLoaded', function () {
             playFirstFewSeconds();
         }
     });
+
+    SongDict = await loadData()
+
+    console.log(SongDict)
+    console.log(SongDict.length)
+
+    for (let i = 0; i < SongDict.length; i++) {
+        let singers = ""
+        for (let j = 0; j < SongDict[i]["Singers"].length; j++) {
+            singers += SongDict[i]["Singers"][j];
+            if (j !== SongDict[i]["Singers"].length - 1){
+                singers += ", "
+            }
+        }
+        ArrGuesses.push(`${SongDict[i]["Song title"]} (${SongDict[i]["Producer"]}) - ${SongDict[i]["Unit"]}: ${singers}`);
+    }
+
+    Answer = ArrGuesses[Number];
+    URL = SongDict[Number]['URL'];
+
+    console.log(ArrGuesses);
+    console.log(Answer);
+    console.log(URL);
 
     // Initialize the player
     initPlayer();
@@ -1155,7 +488,7 @@ function createUnclosablePopup(content, options = {}) {
     document.getElementById('endless-btn').addEventListener('click', async () => {
         Number = getRandomInt(0, 156);
 
-        Answer = SongDict[Number]['answer'];
+        Answer = ArrGuesses[Number];
         URL = SongDict[Number]['url'];
         console.log(Answer);
 
@@ -1165,8 +498,8 @@ function createUnclosablePopup(content, options = {}) {
         for (let i = 0; i < 6; i++) {
             const element = document.getElementById(`guess${i + 1}`);
             if (element) {
-                element.innerHTML = "<br>";
-                if (i !== 0){
+                element.innerHTML = "<br><br>";
+                if (i !== 0) {
                     // unlight it
                     element.classList.remove('col-sm-middle-guessed');
                     element.classList.add('col-sm-middle');
