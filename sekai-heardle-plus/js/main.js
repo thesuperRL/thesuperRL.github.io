@@ -433,7 +433,7 @@ function createUnclosablePopup(content, options = {}) {
     // Set the popup content
     popup.innerHTML = `
                 <h4 id="end-result"> ${config.title} </h4>
-                <p>The correct answer was "${Answer}"</p>
+                <p>The correct answer was <a href="${URL}" target="_blank">"${Answer}"</a></p>
                 <p id="tries-used">${content}</p>
                 <button id="share-btn"> 
                     SHARE 
@@ -584,7 +584,7 @@ function generateContent(isGuessed) {
 
     let answer = ""
     if (mode == "Endless") {
-        answer = "\n\n Song: " + Answer;
+        answer = `\n\n Song: ${Answer}`;
     }
 
     return `Project Sekai ${mode} Heardle #${Number}, ${formattedDate} (UTC) ${answer}
