@@ -1145,6 +1145,7 @@ function createUnclosablePopup(content, options = {}) {
             setTimeout(() => {
                 button.textContent = 'Copy to Clipboard';
                 button.classList.remove('copied');
+                status.textContent = '';
             }, 2000);
         } else {
             status.textContent = 'Failed to copy to clipboard.';
