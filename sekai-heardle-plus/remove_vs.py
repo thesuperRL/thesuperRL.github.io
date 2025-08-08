@@ -20,6 +20,7 @@ try:
         if row["Unit"] in ["N/A", "VIRTUAL SINGER"] and row["URL"] == "":
             pass
         else:
+            row["URL"] = row["URL"].split("?in=")[0]
             concat.append(row)
 
     # Save in JSON file format
