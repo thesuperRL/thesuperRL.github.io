@@ -489,8 +489,9 @@ function createUnclosablePopup(content, options = {}) {
         Number = getRandomInt(0, 156);
 
         Answer = ArrGuesses[Number];
-        URL = SongDict[Number]['url'];
+        URL = SongDict[Number]['URL'];
         console.log(Answer);
+        console.log(URL);
 
         // clear wrong answers
         wrongGuesses = [];
