@@ -1247,7 +1247,12 @@ function generateContent(isGuessed) {
     const date = new Date();
     const formattedDate = formatDateUTC(date)
 
-    return `Project Sekai ${mode} Heardle #${Number}, ${formattedDate} (UTC)
+    let answer = ""
+    if (mode == "Endless") {
+        answer = "\n\n Song: " + Answer;
+    }
+
+    return `Project Sekai ${mode} Heardle #${Number}, ${formattedDate} (UTC) ${answer}
 
 ${generateGuessNumbers(isGuessed)}`;
 }
